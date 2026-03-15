@@ -1,0 +1,1 @@
+<h1>Ödeme Başarılı</h1>

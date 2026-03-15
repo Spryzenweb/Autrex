@@ -1,0 +1,7 @@
+ignoredBuiltDependencies:
+  - xxhash-addon
+
+onlyBuiltDependencies:
+  - electron
+  - electron-overlay-window
+  - esbuild
