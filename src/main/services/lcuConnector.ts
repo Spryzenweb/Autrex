@@ -693,23 +693,28 @@ export class LCUConnector extends EventEmitter {
   /**
    * Start matchmaking queue
    */
-  async startQueue(queueId: number): Promise<void> {
+ async startQueue(queueId: number): Promise<void> {
     if (!this.connected) {
-      throw new Error('Not connected to LCU')
+        throw new Error('Not connected to LCU')
     }
 
     try {
-      await this.request('POST', '/lol-lobby/v2/lobby', {
-        queueId
-      })
+        // Mevcut lobiyi kontrol et
+        const currentLobby = await this.request('GET', '/lol-lobby/v2/lobby').catch(() => null)
 
-      await this.request('POST', '/lol-lobby/v2/lobby/matchmaking/search')
-      console.log('[LCU] Started queue:', queueId)
+        // Lobi yoksa veya farklı queue ise yeni lobi oluştur
+        if (!currentLobby || currentLobby?.gameConfig?.queueId !== queueId) {
+            await this.request('POST', '/lol-lobby/v2/lobby', { queueId })
+        }
+
+        // Kuyruğa gir
+        await this.request('POST', '/lol-lobby/v2/lobby/matchmaking/search')
+        console.log('[LCU] Started queue:', queueId)
     } catch (error) {
-      console.error('[LCU] Failed to start queue:', error)
-      throw error
+        console.error('[LCU] Failed to start queue:', error)
+        throw error
     }
-  }
+}
 
   /**
    * Stop matchmaking queue

@@ -1548,13 +1548,27 @@ function setupLCUConnection(): void {
     }
   })
 
-  // Forward lobby session to remote control
-  lcuConnector.on('lobby-session', async (lobby) => {
+// Forward lobby session to remote control (WebSocket eventi)
+lcuConnector.on('lobby-session', async (lobby) => {
     if (remoteControlService.isActive()) {
-      console.log('[Main] Lobby session update received, forwarding to remote control')
-      await remoteControlService.updateLobbyState(lobby)
+        console.log('[Main] Lobby session update received, forwarding to remote control')
+        await remoteControlService.updateLobbyState(lobby)
     }
-  })
+})
+
+// Lobby fazına girildiğinde mevcut lobi datasını hemen çek
+gameflowMonitor.on('phase-changed', async (phase) => {
+    if (phase === 'Lobby' && remoteControlService.isActive()) {
+        try {
+            const lobbyData = await lcuConnector.getLobbyData()
+            if (lobbyData) {
+                await remoteControlService.updateLobbyState(lobbyData)
+            }
+        } catch(e) {
+            console.log('[Main] Could not fetch initial lobby data:', e)
+        }
+    }
+})
 
   // Forward gameflow events
   gameflowMonitor.on('phase-changed', async (phase, previousPhase) => {

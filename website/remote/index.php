@@ -2221,10 +2221,13 @@ async function updatePositions() {
     if (p === s) { showToast('Birincil ve ikincil pozisyon farklı olmalı', 'error'); return; }
 
     try {
-        const { error } = await sb.from('remote_commands').insert([{
-            session_code: SESSION_CODE, command_type: 'update_positions',
-            additional_data: { primary_position: p, secondary_position: s }
-        }]);
+      const { error } = await sb.from('remote_commands').insert([{
+    session_code: SESSION_CODE,
+    command_type: 'update_positions',
+    champion_id: 0,
+    executed: false,
+    additional_data: { primary_position: p, secondary_position: s }
+}]);
         if (error) throw error;
         showToast('Pozisyon tercihleri güncellendi!', 'success');
     } catch(e) {
@@ -2238,11 +2241,11 @@ function renderLobbyMembers(lobbyState) {
     const list = document.getElementById('lobbyList');
     const posCard = document.getElementById('posCard');
 
-    if (!lobbyState?.lobby_members?.length) {
-        card.classList.add('hidden');
-        return;
-    }
-
+   if (!lobbyState?.lobby_members?.length) {
+    card.classList.add('hidden');
+    posCard?.classList.add('hidden');  // ← EKLE
+    return;
+}
     card.classList.remove('hidden');
     list.innerHTML = lobbyState.lobby_members.map(m => {
         const badges = [];
@@ -2255,15 +2258,16 @@ function renderLobbyMembers(lobbyState) {
         </div>`;
     }).join('');
 
-    const qid = lobbyState.queue_id;
-    if (qid === 420 || qid === 440) {
-        posCard.classList.remove('hidden');
-        const lp = lobbyState.local_player_position_preferences;
-        if (lp?.primaryPosition) document.getElementById('primaryPos').value = lp.primaryPosition;
-        if (lp?.secondaryPosition) document.getElementById('secondaryPos').value = lp.secondaryPosition;
-    } else {
-        posCard.classList.add('hidden');
-    }
+const qid = lobbyState.queue_id;
+const noQueueSelected = !qid || qid === 0;
+if (noQueueSelected || qid === 420 || qid === 440) {
+    posCard.classList.remove('hidden');
+    const lp = lobbyState.local_player_position_preferences;
+    if (lp?.primaryPosition) document.getElementById('primaryPos').value = lp.primaryPosition;
+    if (lp?.secondaryPosition) document.getElementById('secondaryPos').value = lp.secondaryPosition;
+} else {
+    posCard.classList.add('hidden');
+}
 }
 
 // ==================== TRADES ====================

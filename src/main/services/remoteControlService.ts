@@ -201,14 +201,16 @@ export class RemoteControlService {
         // Trade ID is stored in championId field
         await lcuConnector.declineTrade(command.championId)
       } else if (command.commandType === 'update_positions') {
-        // Position preferences stored in additional_data
-        const additionalData = command.additionalData || {}
-        const primary = additionalData.primary_position
-        const secondary = additionalData.secondary_position
-        if (primary && secondary) {
-          await lcuConnector.updatePositionPreferences(primary, secondary)
-        }
-      }
+    const additionalData = command.additionalData || {}
+    const primary = additionalData.primary_position
+    const secondary = additionalData.secondary_position
+    if (primary && secondary) {
+        await lcuConnector.updatePositionPreferences(
+            primary.toUpperCase(),
+            secondary.toUpperCase()
+        )
+    }
+}
 
       // Mark command as executed
       await this.supabase.from('remote_commands').update({ executed: true }).eq('id', command.id)
@@ -251,9 +253,9 @@ export class RemoteControlService {
         })),
         queue_id: lobby.gameConfig?.queueId || 0,
         local_player_position_preferences: {
-          first: localPlayer?.firstPositionPreference || '',
-          second: localPlayer?.secondPositionPreference || ''
-        },
+    primaryPosition: localPlayer?.firstPositionPreference || '',
+    secondaryPosition: localPlayer?.secondPositionPreference || ''
+},
         updated_at: new Date().toISOString()
       }
 
