@@ -336,6 +336,10 @@
     animation: shimmer 2s infinite;
   }
 
+  .animate-shimmer {
+    animation: shimmer 2s infinite linear;
+  }
+
   /* Pulse animation for buttons */
   @keyframes pulse-glow {
     0%, 100% {

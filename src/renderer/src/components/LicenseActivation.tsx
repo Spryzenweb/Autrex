@@ -8,6 +8,7 @@ import { licenseAtom } from '../store/atoms/license.atoms'
 import { AlertCircle, CheckCircle2, Key, Sparkles, Shield, Zap, Globe } from 'lucide-react'
 import logoImage from '../assets/images/logo-build.png'
 import '../assets/license-activation.css'
+import { UpdateNotification } from './UpdateNotification'
 
 interface LicenseActivationProps {
   onActivated?: () => void
@@ -21,10 +22,26 @@ export function LicenseActivation({ onActivated }: LicenseActivationProps) {
   const [success, setSuccess] = useState(false)
   const setLicense = useSetAtom(licenseAtom)
   const [animateFeatures, setAnimateFeatures] = useState(false)
+  const [checkingUpdate, setCheckingUpdate] = useState(true)
 
   useEffect(() => {
     // Trigger feature animations after mount
     setTimeout(() => setAnimateFeatures(true), 300)
+    
+    // Check for updates on license screen
+    const checkUpdates = async () => {
+      try {
+        console.log('[LicenseActivation] Checking for updates...')
+        await window.api.checkForUpdates()
+      } catch (error) {
+        console.error('[LicenseActivation] Update check failed:', error)
+      } finally {
+        setCheckingUpdate(false)
+      }
+    }
+    
+    // Check after 2 seconds
+    setTimeout(checkUpdates, 2000)
   }, [])
 
   const changeLanguage = async (lng: string) => {
@@ -121,7 +138,9 @@ export function LicenseActivation({ onActivated }: LicenseActivationProps) {
   }
 
   return (
-    <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-primary-900 via-background to-primary-800 p-4 overflow-hidden">
+    <>
+      <UpdateNotification />
+      <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-primary-900 via-background to-primary-800 p-4 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl animate-pulse" />
@@ -379,5 +398,6 @@ export function LicenseActivation({ onActivated }: LicenseActivationProps) {
         </div>
       </div>
     </div>
+    </>
   )
 }

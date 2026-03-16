@@ -1,12 +1,19 @@
-# v1.1.2
+# v1.1.3
 
 ## 🎉 Yeni Özellikler
-- Test güncelleme bildirimi
-- Otomatik indirme ve kurulum testi
+- Modern zorunlu güncelleme ekranı
+- Lisans aktivasyon ekranında otomatik güncelleme kontrolü
+- Tam ekran güncelleme modal'ı (toast yerine)
 
 ## 🔧 İyileştirmeler
-- Güncelleme sistemi test ediliyor
+- "Later" butonu kaldırıldı - güncelleme artık zorunlu
+- Kullanıcı güncellemeyi indirmeden uygulamayı kullanamaz
+- Animasyonlu gradient arka plan ve modern UI
+- İndirme progress bar'ı eklendi
+- Otomatik kurulum ve yeniden başlatma
+
+## 🐛 Hata Düzeltmeleri
+- electron-builder.yml repo bilgisi düzeltildi (Spryzenweb/Autrex)
 
 ## 📝 Notlar
-Bu v1.1.1'den v1.1.2'ye güncelleme testidir.
-
+Bu sürüm zorunlu güncelleme sistemi içerir. Kullanıcılar yeni sürüm çıktığında önce güncellemeyi indirmek zorundadır.

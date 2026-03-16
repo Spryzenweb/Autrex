@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { toast } from 'sonner'
+import { UpdateModal } from './UpdateModal'
 
 interface UpdateInfo {
   version: string
@@ -20,14 +20,6 @@ export function UpdateNotification() {
       console.log('[UpdateNotification] Update available:', info)
       setUpdateAvailable(true)
       setUpdateInfo(info)
-      
-      toast.info(`Yeni güncelleme mevcut: v${info.version}`, {
-        duration: Infinity,
-        action: {
-          label: 'İndir',
-          onClick: handleDownload
-        }
-      })
     })
 
     const removeUpdateNotAvailable = window.api.onUpdateNotAvailable(() => {
@@ -36,21 +28,15 @@ export function UpdateNotification() {
 
     const removeUpdateError = window.api.onUpdateError((error: string) => {
       console.error('[UpdateNotification] Update error:', error)
-      toast.error(`Güncelleme hatası: ${error}`)
       setDownloading(false)
     })
 
     const removeDownloadProgress = window.api.onUpdateDownloadProgress((progress: any) => {
       setDownloadProgress(progress.percent || 0)
-      toast.loading(`İndiriliyor: ${Math.round(progress.percent || 0)}%`, {
-        id: 'update-download'
-      })
     })
 
     const removeUpdateDownloaded = window.api.onUpdateDownloaded(() => {
-      toast.success('Güncelleme indirildi! Uygulama yeniden başlatılıyor...', {
-        id: 'update-download'
-      })
+      console.log('[UpdateNotification] Update downloaded, app will restart')
       // App will quit and install automatically
     })
 
@@ -73,5 +59,17 @@ export function UpdateNotification() {
     }
   }
 
-  return null // This component only handles notifications
+  // Show mandatory update modal
+  if (updateAvailable && updateInfo) {
+    return (
+      <UpdateModal
+        updateInfo={updateInfo}
+        onDownload={handleDownload}
+        downloading={downloading}
+        downloadProgress={downloadProgress}
+      />
+    )
+  }
+
+  return null
 }
