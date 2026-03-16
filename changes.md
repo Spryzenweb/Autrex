@@ -1,3 +1,26 @@
+# v1.1.4
+
+## 🎉 Yeni Özellikler
+- Profil Yönetimi - Bio & Durum ayarlama
+- Rank Gösterimi - Özel rank gösterimi
+- Takım İstatistikleri - Oyun içi takım analizi
+- Ganimet Yöneticisi - Loot yönetim sistemi
+- Şampiyon Satın Al - Otomatik şampiyon satın alma
+- Raporlama Aracı - Oyuncu raporlama sistemi
+- Hesap Yöneticisi - Çoklu hesap yönetimi
+- Ayarlar Editörü - Gelişmiş ayar düzenleme
+- Diğer Araçlar - Ek yardımcı araçlar
+
+## 🔧 İyileştirmeler
+- Otomatik güncelleme sistemi optimizasyonu
+- Kullanıcı arayüzü iyileştirmeleri
+- Performans optimizasyonları
+
+## 📝 Notlar
+Bu sürüm kapsamlı yeni özellikler ve iyileştirmeler içerir.
+
+---
+
 # v1.1.3
 
 ## 🎉 Yeni Özellikler
