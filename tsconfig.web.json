@@ -8,6 +8,10 @@
     "src/main/types/index.ts",
     "src/shared/**/*"
   ],
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ],
   "compilerOptions": {
     "composite": true,
     "jsx": "react-jsx",

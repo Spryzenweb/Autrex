@@ -84,22 +84,22 @@ function createWindow(): void {
       sandbox: false,
       contextIsolation: true,
       nodeIntegration: false,
-      devTools: true // Enable DevTools for debugging
+      devTools: is.dev // Only allow DevTools in development
     }
   })
 
-  // Temporarily disable DevTools protection for debugging
-  // if (!is.dev) {
-  //   mainWindow.webContents.on('devtools-opened', () => {
-  //     mainWindow?.webContents.closeDevTools()
-  //     antiDebugService.stopProtection()
-  //     dialog.showErrorBox(
-  //       'Security Alert',
-  //       'Developer tools are not allowed in production. The application will now close.'
-  //     )
-  //     app.quit()
-  //   })
-  // }
+  // Prevent DevTools in production
+  if (!is.dev) {
+    mainWindow.webContents.on('devtools-opened', () => {
+      mainWindow?.webContents.closeDevTools()
+      antiDebugService.stopProtection()
+      dialog.showErrorBox(
+        'Security Alert',
+        'Developer tools are not allowed in production. The application will now close.'
+      )
+      app.quit()
+    })
+  }
 
   mainWindow.on('ready-to-show', () => {
     mainWindow?.show()

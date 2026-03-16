@@ -17,7 +17,8 @@ export class UpdaterService {
     
     autoUpdater.autoDownload = false
     autoUpdater.autoRunAppAfterInstall = true
-    autoUpdater.forceDevUpdateConfig = true // Enable updates in dev mode
+    // forceDevUpdateConfig only for development testing
+    // autoUpdater.forceDevUpdateConfig = true
 
     console.log('[Updater] Initialized with repo: Spryzenweb/Autrex')
     this.setupEventListeners()

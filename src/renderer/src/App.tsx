@@ -169,47 +169,11 @@ import { VersionMismatchScreen } from './components/VersionMismatchScreen'
 
 function App(): React.JSX.Element {
   const { t } = useTranslation()
-  const [isVersionChecked, setIsVersionChecked] = useState(false)
-  const [isVersionCompatible, setIsVersionCompatible] = useState(true)
-  const [versionInfo, setVersionInfo] = useState<{
-    currentVersion: string
-    requiredVersion: string
-  } | null>(null)
   const [isLicenseChecked, setIsLicenseChecked] = useState(false)
   const [isLicenseValid, setIsLicenseValid] = useState(false)
   const setLicense = useSetAtom(licenseAtom)
 
   useEffect(() => {
-    // Check version first
-    const checkVersion = async () => {
-      try {
-        const result = await window.api.versionCheck()
-
-        if (!result.isCompatible && result.requiredVersion) {
-          setIsVersionCompatible(false)
-          setVersionInfo({
-            currentVersion: result.currentVersion,
-            requiredVersion: result.requiredVersion
-          })
-        } else {
-          setIsVersionCompatible(true)
-        }
-      } catch (error) {
-        console.error('Failed to check version:', error)
-        // On error, allow usage
-        setIsVersionCompatible(true)
-      } finally {
-        setIsVersionChecked(true)
-      }
-    }
-
-    checkVersion()
-  }, [])
-
-  useEffect(() => {
-    // Only check license if version is compatible
-    if (!isVersionChecked || !isVersionCompatible) return
-
     // Check license status on app start
     const checkLicense = async () => {
       try {
@@ -262,37 +226,7 @@ function App(): React.JSX.Element {
     return () => {
       window.electron.ipcRenderer.removeListener('license:invalidated', handleLicenseInvalidated)
     }
-  }, [setLicense, isVersionChecked, isVersionCompatible])
-
-  // Show loading while checking version
-  if (!isVersionChecked) {
-    return (
-      <LocaleProvider>
-        <ThemeProvider>
-          <div className="flex items-center justify-center h-screen bg-background">
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin" />
-              <p className="text-text-secondary">Checking version...</p>
-            </div>
-          </div>
-        </ThemeProvider>
-      </LocaleProvider>
-    )
-  }
-
-  // Show version mismatch screen if version is not compatible
-  if (!isVersionCompatible && versionInfo) {
-    return (
-      <LocaleProvider>
-        <ThemeProvider>
-          <VersionMismatchScreen
-            currentVersion={versionInfo.currentVersion}
-            requiredVersion={versionInfo.requiredVersion}
-          />
-        </ThemeProvider>
-      </LocaleProvider>
-    )
-  }
+  }, [setLicense, t])
 
   // Show loading while checking license
   if (!isLicenseChecked) {
