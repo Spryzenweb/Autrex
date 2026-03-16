@@ -1,10 +1,10 @@
 {
   "name": "autrex",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Autrex - League of Legends automation app",
   "main": "./out/main/index.js",
   "author": "Autrex Team",
-  "homepage": "https://github.com/autrex/autrex",
+  "homepage": "https://github.com/Spryzenweb/Autrex",
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint --cache .",
@@ -24,7 +24,9 @@
     "fetch-champion-data": "bun run scripts/fetch-champion-data.ts",
     "generate-keys": "node scripts/generate-license-keys.js",
     "fetch-champion-data:force": "bun run scripts/fetch-champion-data.ts --force",
-    "fetch-champion-data:sequential": "bun run scripts/fetch-champion-data.ts --sequential"
+    "fetch-champion-data:sequential": "bun run scripts/fetch-champion-data.ts --sequential",
+    "release": "bash scripts/release.sh",
+    "release:win": "scripts\\release.bat"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

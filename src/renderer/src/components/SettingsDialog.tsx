@@ -1,6 +1,6 @@
 import { Settings, Shield, MessageSquare, Palette } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
   Dialog,
   DialogContent,
@@ -11,11 +11,25 @@ import {
 } from './ui/dialog'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs'
 import { LicenseManagement } from './LicenseManagement'
-import { VersionInfo } from './VersionInfo'
 import { AutoMessageSettings } from './AutoMessageSettings'
 import { Switch } from './ui/switch'
 import { Label } from './ui/label'
 import { useTheme } from '../contexts/ThemeContext'
+
+function CurrentVersionDisplay() {
+  const [version, setVersion] = useState<string>('...')
+
+  useEffect(() => {
+    window.api.getCurrentVersion().then(setVersion).catch(() => setVersion('Unknown'))
+  }, [])
+
+  return (
+    <div className="flex items-center justify-between">
+      <span className="text-xs text-text-secondary">Mevcut Sürüm</span>
+      <span className="text-xs font-mono font-medium text-text-primary">v{version}</span>
+    </div>
+  )
+}
 
 interface SettingsDialogProps {
   isOpen: boolean
@@ -218,7 +232,35 @@ export function SettingsDialog({ isOpen, onClose }: SettingsDialogProps) {
           </TabsContent>
 
           <TabsContent value="version" className="space-y-6 mt-6">
-            <VersionInfo />
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+                  <Settings className="w-5 h-5" />
+                  Sürüm Bilgisi
+                </h3>
+                <p className="text-sm text-text-secondary">
+                  Uygulama güncellemeleri otomatik olarak kontrol edilir
+                </p>
+              </div>
+
+              <div className="p-4 rounded-lg bg-surface/50 border border-border/50">
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-primary-500/10">
+                    <Settings className="w-5 h-5 text-primary-500" />
+                  </div>
+                  <div className="flex-1 space-y-2">
+                    <p className="text-sm font-medium text-white">Otomatik Güncelleme</p>
+                    <p className="text-xs text-text-secondary">
+                      Yeni sürümler otomatik olarak kontrol edilir ve bildirim olarak gösterilir. 
+                      Güncelleme mevcut olduğunda bildirimi tıklayarak indirebilirsiniz.
+                    </p>
+                    <div className="pt-2 border-t border-border/50">
+                      <CurrentVersionDisplay />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </TabsContent>
         </Tabs>
 

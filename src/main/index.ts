@@ -1,13 +1,4 @@
-import {
-  app,
-  shell,
-  BrowserWindow,
-  ipcMain,
-  Tray,
-  Menu,
-  nativeImage,
-  dialog
-} from 'electron'
+import { app, shell, BrowserWindow, ipcMain, Tray, Menu, nativeImage, dialog } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../build/icon.png?asset'
@@ -93,25 +84,29 @@ function createWindow(): void {
       sandbox: false,
       contextIsolation: true,
       nodeIntegration: false,
-      devTools: is.dev // Only allow DevTools in development
+      devTools: true // Enable DevTools for debugging
     }
   })
 
-  // Prevent DevTools in production
-  if (!is.dev) {
-    mainWindow.webContents.on('devtools-opened', () => {
-      mainWindow?.webContents.closeDevTools()
-      antiDebugService.stopProtection()
-      dialog.showErrorBox(
-        'Security Alert',
-        'Developer tools are not allowed in production. The application will now close.'
-      )
-      app.quit()
-    })
-  }
+  // Temporarily disable DevTools protection for debugging
+  // if (!is.dev) {
+  //   mainWindow.webContents.on('devtools-opened', () => {
+  //     mainWindow?.webContents.closeDevTools()
+  //     antiDebugService.stopProtection()
+  //     dialog.showErrorBox(
+  //       'Security Alert',
+  //       'Developer tools are not allowed in production. The application will now close.'
+  //     )
+  //     app.quit()
+  //   })
+  // }
 
   mainWindow.on('ready-to-show', () => {
     mainWindow?.show()
+    // Set main window for updater service
+    if (mainWindow) {
+      updaterService.setMainWindow(mainWindow)
+    }
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
@@ -225,8 +220,20 @@ if (gotTheLock) {
     createWindow()
     createTray()
 
+    console.log('[Main] Window and tray created, setting up handlers...')
+    
     setupIpcHandlers()
     setupLCUConnection()
+
+    console.log('[Main] Scheduling update check in 3 seconds...')
+    
+    // Check for updates on startup (after a short delay)
+    setTimeout(() => {
+      console.log('[Main] Running scheduled update check...')
+      updaterService.checkForUpdates().catch((err) => {
+        console.error('[Updater] Failed to check for updates on startup:', err)
+      })
+    }, 3000)
 
     // Start periodic license validation if license exists
     const licenseStatus = licenseService.checkLicenseStatus()
@@ -1385,6 +1392,50 @@ function setupIpcHandlers(): void {
     }
   })
 
+  ipcMain.handle('quit-and-install', async () => {
+    try {
+      updaterService.quitAndInstall()
+      return { success: true }
+    } catch (error) {
+      return { success: false, error: error instanceof Error ? error.message : 'Unknown error' }
+    }
+  })
+
+  ipcMain.handle('cancel-update', async () => {
+    try {
+      updaterService.cancelUpdate()
+      return { success: true }
+    } catch (error) {
+      return { success: false, error: error instanceof Error ? error.message : 'Unknown error' }
+    }
+  })
+
+  ipcMain.handle('get-update-changelog', async () => {
+    try {
+      const changelog = await updaterService.getChangelog()
+      return { success: true, changelog }
+    } catch (error) {
+      return {
+        success: false,
+        changelog: null,
+        error: error instanceof Error ? error.message : 'Unknown error'
+      }
+    }
+  })
+
+  ipcMain.handle('get-update-info', () => {
+    try {
+      const info = updaterService.getUpdateInfo()
+      return { success: true, info }
+    } catch (error) {
+      return {
+        success: false,
+        info: null,
+        error: error instanceof Error ? error.message : 'Unknown error'
+      }
+    }
+  })
+
   // Window controls
   ipcMain.handle('minimize-window', () => {
     const window = BrowserWindow.getFocusedWindow()
@@ -1548,27 +1599,27 @@ function setupLCUConnection(): void {
     }
   })
 
-// Forward lobby session to remote control (WebSocket eventi)
-lcuConnector.on('lobby-session', async (lobby) => {
+  // Forward lobby session to remote control (WebSocket eventi)
+  lcuConnector.on('lobby-session', async (lobby) => {
     if (remoteControlService.isActive()) {
-        console.log('[Main] Lobby session update received, forwarding to remote control')
-        await remoteControlService.updateLobbyState(lobby)
+      console.log('[Main] Lobby session update received, forwarding to remote control')
+      await remoteControlService.updateLobbyState(lobby)
     }
-})
+  })
 
-// Lobby fazına girildiğinde mevcut lobi datasını hemen çek
-gameflowMonitor.on('phase-changed', async (phase) => {
+  // Lobby fazına girildiğinde mevcut lobi datasını hemen çek
+  gameflowMonitor.on('phase-changed', async (phase) => {
     if (phase === 'Lobby' && remoteControlService.isActive()) {
-        try {
-            const lobbyData = await lcuConnector.getLobbyData()
-            if (lobbyData) {
-                await remoteControlService.updateLobbyState(lobbyData)
-            }
-        } catch(e) {
-            console.log('[Main] Could not fetch initial lobby data:', e)
+      try {
+        const lobbyData = await lcuConnector.getLobbyData()
+        if (lobbyData) {
+          await remoteControlService.updateLobbyState(lobbyData)
         }
+      } catch (e) {
+        console.log('[Main] Could not fetch initial lobby data:', e)
+      }
     }
-})
+  })
 
   // Forward gameflow events
   gameflowMonitor.on('phase-changed', async (phase, previousPhase) => {

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import { useTranslation } from 'react-i18next'
 import { Zap } from 'lucide-react'
 import { toast } from 'sonner'
 import { Button } from './ui/button'
@@ -20,6 +21,7 @@ interface SpellSelectorModalProps {
 }
 
 function SpellSelectorModal({ isOpen, onClose, disabled }: SpellSelectorModalProps) {
+  const { t } = useTranslation()
   const [availableSpells, setAvailableSpells] = useState<SummonerSpell[]>([])
   const [spell1Id, setSpell1Id] = useState<number>(0)
   const [spell2Id, setSpell2Id] = useState<number>(0)
@@ -280,6 +282,7 @@ function SpellSelectorModal({ isOpen, onClose, disabled }: SpellSelectorModalPro
 }
 
 export function SpellSelector({ disabled }: { disabled?: boolean }) {
+  const { t } = useTranslation()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [spell1Id, setSpell1Id] = useState<number>(0)
   const [spell2Id, setSpell2Id] = useState<number>(0)

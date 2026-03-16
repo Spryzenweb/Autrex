@@ -17,6 +17,7 @@
 import { useRef, useState, useEffect } from 'react'
 import { useAtomValue, useSetAtom } from 'jotai'
 import { Toaster } from 'sonner'
+import { useTranslation } from 'react-i18next'
 
 // Components
 import { TitleBar } from './components/TitleBar'
@@ -46,6 +47,7 @@ import { P2PProvider } from './contexts/P2PContext'
 import { useAppInitialization } from './hooks/useAppInitialization'
 import { useChampionSelectHandler } from './hooks/useChampionSelectHandler'
 import { useStyles } from './hooks/useOptimizedState'
+import { UpdateNotification } from './components/UpdateNotification'
 import '@/utils/antiTamper' // Import anti-tamper protection
 
 // Atoms
@@ -126,6 +128,7 @@ function AppContent(): React.JSX.Element {
 
   return (
     <>
+      <UpdateNotification />
       <TitleBar appVersion={appVersion} />
       <EnvironmentIndicator />
       <Toaster
@@ -165,6 +168,7 @@ function AppContent(): React.JSX.Element {
 import { VersionMismatchScreen } from './components/VersionMismatchScreen'
 
 function App(): React.JSX.Element {
+  const { t } = useTranslation()
   const [isVersionChecked, setIsVersionChecked] = useState(false)
   const [isVersionCompatible, setIsVersionCompatible] = useState(true)
   const [versionInfo, setVersionInfo] = useState<{

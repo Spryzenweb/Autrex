@@ -17,7 +17,6 @@ interface SettingsSection {
 class SettingsEditorService {
   private gameConfigPath: string | null = null
   private persistedSettingsPath: string | null = null
-  private inputIniPath: string | null = null
 
   async findGameConfigPath(): Promise<string | null> {
     try {
@@ -70,7 +69,6 @@ class SettingsEditorService {
           await fs.access(gameCfgPath)
           this.gameConfigPath = gameCfgPath
           this.persistedSettingsPath = path.join(configPath, 'PersistedSettings.json')
-          this.inputIniPath = path.join(configPath, 'Input.ini')
           console.log('[SettingsEditor] Found game config at:', gameCfgPath)
           return gameCfgPath
         } catch {

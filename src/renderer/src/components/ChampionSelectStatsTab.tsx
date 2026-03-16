@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useAtomValue } from 'jotai'
+import { useTranslation } from 'react-i18next'
 import { lcuConnectedAtom } from '../store/atoms/lcu.atoms'
 import { Loader2, ExternalLink, Users } from 'lucide-react'
 import { toast } from 'sonner'
@@ -20,6 +21,7 @@ interface PlayerStats {
 }
 
 export default function ChampionSelectStatsTab() {
+  const { t } = useTranslation()
   const isConnected = useAtomValue(lcuConnectedAtom)
   const [loading, setLoading] = useState(false)
   const [players, setPlayers] = useState<PlayerStats[]>([])

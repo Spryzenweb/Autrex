@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Activity, TrendingUp, Trophy, Coins, Sparkles, Zap } from 'lucide-react'
-import { GoldTracker } from './live-game/GoldTracker'
-import { AugmentTierList } from './live-game/AugmentTierList'
+// import { GoldTracker } from './live-game/GoldTracker'
+// import { AugmentTierList } from './live-game/AugmentTierList'
 
 interface Player {
   summonerName: string
@@ -118,7 +118,8 @@ export function LiveGameStats() {
         {/* Content */}
         <div className="flex flex-col items-center justify-center flex-1 gap-6">
           {activeTab === 'augments' ? (
-            <AugmentTierList />
+            // <AugmentTierList />
+            <div className="text-text-secondary">Augment tier list coming soon</div>
           ) : (
             <div className="flex flex-col items-center gap-6 text-center">
               <div className="relative">
@@ -177,7 +178,8 @@ export function LiveGameStats() {
         {/* Content */}
         <div className="flex flex-col items-center justify-center flex-1 gap-6">
           {activeTab === 'augments' ? (
-            <AugmentTierList />
+            // <AugmentTierList />
+            <div className="text-text-secondary">Augment tier list coming soon</div>
           ) : (
             <div className="flex flex-col items-center gap-6">
               <div className="relative">
@@ -428,8 +430,10 @@ export function LiveGameStats() {
           </div>
         )}
 
-        {activeTab === 'gold' && <GoldTracker gameData={gameData} />}
-        {activeTab === 'augments' && <AugmentTierList />}
+        {/* {activeTab === 'gold' && <GoldTracker gameData={gameData} />} */}
+        {/* {activeTab === 'augments' && <AugmentTierList />} */}
+        {activeTab === 'gold' && <div className="p-6 text-text-secondary">Gold tracker coming soon</div>}
+        {activeTab === 'augments' && <div className="p-6 text-text-secondary">Augment tier list coming soon</div>}
       </div>
     </div>
   )

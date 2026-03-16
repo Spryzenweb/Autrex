@@ -8,9 +8,18 @@ export class UpdaterService {
   private cancellationToken: CancellationToken | null = null
 
   constructor() {
+    // Configure autoUpdater to use Spryzenweb/Autrex repo
+    autoUpdater.setFeedURL({
+      provider: 'github',
+      owner: 'Spryzenweb',
+      repo: 'Autrex'
+    })
+    
     autoUpdater.autoDownload = false
     autoUpdater.autoRunAppAfterInstall = true
+    autoUpdater.forceDevUpdateConfig = true // Enable updates in dev mode
 
+    console.log('[Updater] Initialized with repo: Spryzenweb/Autrex')
     this.setupEventListeners()
   }
 
@@ -20,27 +29,33 @@ export class UpdaterService {
 
   private setupEventListeners() {
     autoUpdater.on('checking-for-update', () => {
+      console.log('[Updater] Checking for updates...')
       this.sendToWindow('update-checking')
     })
 
     autoUpdater.on('update-available', (info) => {
+      console.log('[Updater] Update available:', info)
       this.updateInfo = info
       this.sendToWindow('update-available', info)
     })
 
     autoUpdater.on('update-not-available', () => {
+      console.log('[Updater] No updates available')
       this.sendToWindow('update-not-available')
     })
 
     autoUpdater.on('error', (err) => {
+      console.error('[Updater] Error:', err)
       this.sendToWindow('update-error', err.message)
     })
 
     autoUpdater.on('download-progress', (progressObj) => {
+      console.log('[Updater] Download progress:', progressObj.percent)
       this.sendToWindow('update-download-progress', progressObj)
     })
 
     autoUpdater.on('update-downloaded', () => {
+      console.log('[Updater] Update downloaded, will install now')
       this.sendToWindow('update-downloaded')
       // Immediately quit and install
       autoUpdater.quitAndInstall(true, true)
@@ -54,17 +69,14 @@ export class UpdaterService {
   }
 
   async checkForUpdates() {
-    // Skip update check in development mode
-    // if (is.dev) {
-    //   console.log('Skipping update check in development mode')
-    //   return null
-    // }
-
+    console.log('[Updater] Starting update check...')
+    
     try {
       const result = await autoUpdater.checkForUpdates()
+      console.log('[Updater] Check result:', result)
       return result
     } catch (error) {
-      console.error('Error checking for updates:', error)
+      console.error('[Updater] Error checking for updates:', error)
       throw error
     }
   }
@@ -96,8 +108,8 @@ export class UpdaterService {
         return null
       }
 
-      const owner = 'hoangvu12'
-      const repo = 'autrex'
+      const owner = 'Spryzenweb'
+      const repo = 'Autrex'
       const version = this.updateInfo.version
 
       // Try to fetch changes.md from the GitHub release
