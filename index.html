@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autrex — League of Legends Automation Tool</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Exo+2:wght@100;300;400;600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C89B3C;
+    --gold-light: #F0E6D3;
+    --gold-dim: #7A5C1E;
+    --bg: #010A13;
+    --bg2: #0A1628;
+    --bg3: #0D1B2E;
+    --surface: #0F2033;
+    --surface2: #132A42;
+    --blue: #0AC8B9;
+    --blue-dim: #0A5D5A;
+    --red: #C8424B;
+    --text: #A0B4C8;
+    --text-bright: #C8D8E8;
+    --border: rgba(200,155,60,0.25);
+    --glow-gold: 0 0 20px rgba(200,155,60,0.4);
+    --glow-blue: 0 0 20px rgba(10,200,185,0.3);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* BACKGROUND GRID */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,155,60,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,155,60,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 50vh;
+    background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(200,155,60,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ============ HERO ============ */
+  header {
+    position: relative;
+    padding: 80px 0 60px;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--border);
+    background: rgba(200,155,60,0.06);
+    padding: 6px 16px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    animation: fadeDown 0.6s ease both;
+  }
+
+  .hero-badge::before, .hero-badge::after {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation: spin 4s linear infinite;
+  }
+
+  .logo {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(64px, 12vw, 120px);
+    font-weight: 700;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    line-height: 1;
+    background: linear-gradient(160deg, var(--gold-light) 0%, var(--gold) 40%, var(--gold-dim) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    position: relative;
+    animation: fadeDown 0.6s 0.1s ease both;
+  }
+
+  .logo-sub {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 8px;
+    color: var(--blue);
+    text-transform: uppercase;
+    margin-top: 8px;
+    animation: fadeDown 0.6s 0.2s ease both;
+  }
+
+  .hero-desc {
+    max-width: 520px;
+    margin: 24px auto 0;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text);
+    animation: fadeDown 0.6s 0.3s ease both;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 36px;
+    animation: fadeDown 0.6s 0.4s ease both;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--gold) 0%, #A07820 100%);
+    color: #010A13;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+    transform: translateX(-100%);
+    transition: transform 0.4s;
+  }
+
+  .btn-primary:hover::after { transform: translateX(100%); }
+  .btn-primary:hover { box-shadow: var(--glow-gold); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--gold);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 13px 28px;
+    text-decoration: none;
+    border: 1px solid var(--gold-dim);
+    clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+    transition: all 0.2s;
+  }
+  .btn-outline:hover {
+    border-color: var(--gold);
+    background: rgba(200,155,60,0.08);
+    box-shadow: var(--glow-gold);
+  }
+
+  /* DIVIDER */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 56px 0 40px;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border));
+  }
+  .divider::after { background: linear-gradient(90deg, var(--border), transparent); }
+  .divider span {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* SECTION TITLE */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .section-icon {
+    width: 36px; height: 36px;
+    background: rgba(200,155,60,0.1);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  .section-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border), transparent);
+  }
+
+  /* ============ FEATURE CARDS ============ */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 2px;
+  }
+
+  .feature-card {
+    background: var(--bg2);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--gold);
+    transition: height 0.4s ease;
+  }
+
+  .feature-card:hover { background: var(--bg3); }
+  .feature-card:hover::before { height: 100%; }
+
+  .feature-card .tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--blue);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .feature-card h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .feature-card p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--text);
+  }
+
+  /* ============ ROADMAP ============ */
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 16px;
+  }
+
+  .roadmap-group {
+    border: 1px solid var(--border);
+    background: var(--bg2);
+    overflow: hidden;
+  }
+
+  .roadmap-group-header {
+    padding: 14px 20px;
+    background: rgba(200,155,60,0.06);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .roadmap-group-header span:first-child {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .roadmap-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(200,155,60,0.08);
+    transition: background 0.2s;
+  }
+
+  .roadmap-item:last-child { border-bottom: none; }
+  .roadmap-item:hover { background: rgba(200,155,60,0.04); }
+
+  .roadmap-dot {
+    width: 6px; height: 6px;
+    background: var(--gold-dim);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    margin-top: 7px;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+
+  .roadmap-item:hover .roadmap-dot { background: var(--gold); }
+
+  .roadmap-item-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-bright);
+    letter-spacing: 1px;
+    display: block;
+  }
+
+  .roadmap-item-desc {
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.6;
+    margin-top: 2px;
+    display: block;
+  }
+
+  /* ============ INSTALL ============ */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .step {
+    background: var(--bg2);
+    padding: 28px 24px;
+    position: relative;
+    text-align: center;
+    transition: background 0.3s;
+  }
+
+  .step:hover { background: var(--bg3); }
+
+  .step-num {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: rgba(200,155,60,0.1);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .step h4 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .step p {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  .step-arrow {
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px; height: 24px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px;
+    color: var(--gold-dim);
+    z-index: 2;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  /* ============ PLATFORM ============ */
+  .platform-row {
+    display: flex;
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .platform-item {
+    flex: 1;
+    background: var(--bg2);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: background 0.2s;
+  }
+
+  .platform-item:hover { background: var(--bg3); }
+
+  .platform-icon {
+    font-size: 22px;
+    width: 44px; height: 44px;
+    background: rgba(200,155,60,0.08);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .platform-item span {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* CODE BLOCK */
+  .code-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: rgba(10,200,185,0.04);
+    border: 1px solid rgba(10,200,185,0.15);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--blue);
+    letter-spacing: 1px;
+  }
+
+  .code-line::before {
+    content: '›';
+    color: var(--blue);
+    opacity: 0.5;
+  }
+
+  /* ============ NOTICE ============ */
+  .notice-box {
+    border: 1px solid rgba(200,66,75,0.3);
+    background: rgba(200,66,75,0.04);
+    padding: 28px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .notice-box::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--red);
+  }
+
+  .notice-box .notice-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .notice-box p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(200,160,165,0.8);
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    margin-top: 80px;
+    border-top: 1px solid var(--border);
+    padding: 40px 0 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-logo {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: var(--gold);
+  }
+
+  .footer-meta {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--text);
+    letter-spacing: 1px;
+  }
+
+  .footer-meta a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .footer-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .star-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--border);
+    background: rgba(200,155,60,0.05);
+    color: var(--gold);
+    padding: 8px 18px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .star-btn:hover {
+    background: rgba(200,155,60,0.12);
+    box-shadow: var(--glow-gold);
+  }
+
+  /* ============ ANIMATIONS ============ */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes pulse-border {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* SCAN LINE EFFECT */
+  .scanlines {
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0,0,0,0.03) 3px,
+      rgba(0,0,0,0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  /* CORNER DECORATION */
+  .corner-deco {
+    position: relative;
+  }
+
+  .corner-deco::before, .corner-deco::after {
+    content: '';
+    position: absolute;
+    width: 12px; height: 12px;
+  }
+
+  .corner-deco::before {
+    top: 0; left: 0;
+    border-top: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+  }
+
+  .corner-deco::after {
+    bottom: 0; right: 0;
+    border-bottom: 2px solid var(--gold);
+    border-right: 2px solid var(--gold);
+  }
+
+  /* STATUS BADGE */
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--blue);
+    letter-spacing: 2px;
+  }
+
+  .status-dot {
+    width: 6px; height: 6px;
+    background: var(--blue);
+    border-radius: 50%;
+    animation: pulse-border 2s ease infinite;
+    box-shadow: 0 0 8px var(--blue);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .platform-row { flex-direction: column; }
+    .steps { grid-template-columns: 1fr; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .step-arrow { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="scanlines"></div>
+
+<div class="container">
+
+  <!-- HERO -->
+  <header>
+    <div class="hero-badge">
+      <span>League of Legends Tool</span>
+    </div>
+    <div class="logo">AUTREX</div>
+    <div class="logo-sub">Automation · Intelligence · Precision</div>
+    <p class="hero-desc">
+      League of Legends istemcisi için geliştirilmiş profesyonel otomasyon ve analiz platformu. LCU API tabanlı, yerelde çalışan, sıfır gecikme.
+    </p>
+    <div class="cta-row">
+      <a href="https://github.com/Spryzenweb/Autrex/releases" class="btn-primary">
+        ⬇ Son Sürümü İndir
+      </a>
+      <a href="https://github.com/Spryzenweb/Autrex" class="btn-outline">
+        ★ GitHub
+      </a>
+    </div>
+    <div style="margin-top: 24px;">
+      <span class="status-badge">
+        <span class="status-dot"></span>
+        AKTIF GELİŞTİRME
+      </span>
+    </div>
+  </header>
+
+  <!-- AUTOMATION -->
+  <div class="divider"><span>Otomasyon Sistemi</span></div>
+
+  <div class="section-header">
+    <div class="section-icon">⚡</div>
+    <span class="section-title">Otomasyon</span>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="tag">AUTO_ACCEPT</span>
+      <h3>Oto Kabul</h3>
+      <p>Maç bulunduğunda istemciyi anlık olarak algılar ve otomatik kabul eder. Gecikme yok, manuel işlem gerekmez.</p>
+    </div>
+    <div class="feature-card">
+      <span class="tag">AUTO_BAN / PICK</span>
+      <h3>Oto Ban / Pick</h3>
+      <p>Belirlediğin şampiyon öncelik listesine göre ban ve pick aşamalarını tamamen otomatik yönetir.</p>
+    </div>
+    <div class="feature-card">
+      <span class="tag">REMOTE_CTRL</span>
+      <h3>Uzaktan Kontrol</h3>
+      <p>Harici sistemlerden LCU istemcisine bağlanarak gelişmiş otomasyon senaryoları oluşturabilirsin.</p>
+    </div>
+  </div>
+
+  <!-- PLATFORM -->
+  <div class="divider"><span>Platform & Teknoloji</span></div>
+
+  <div class="section-header">
+    <div class="section-icon">🖥</div>
+    <span class="section-title">Platform</span>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="platform-row" style="margin-bottom: 12px;">
+    <div class="platform-item">
+      <div class="platform-icon">🪟</div>
+      <span>Windows</span>
+    </div>
+    <div class="platform-item">
+      <div class="platform-icon">🍎</div>
+      <span>macOS</span>
+    </div>
+    <div class="platform-item">
+      <div class="platform-icon">⚛</div>
+      <span>Electron</span>
+    </div>
+    <div class="platform-item">
+      <div class="platform-icon">🔗</div>
+      <span>Riot LCU API</span>
+    </div>
+  </div>
+
+  <div class="code-line">Riot Client API (LCU) üzerinden çalışır — harici sunucu bağlantısı gerektirmez</div>
+
+  <!-- INSTALLATION -->
+  <div class="divider"><span>Kurulum</span></div>
+
+  <div class="section-header">
+    <div class="section-icon">🚀</div>
+    <span class="section-title">Kurulum</span>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="steps">
+    <div class="step" style="position:relative;">
+      <div class="step-num">01</div>
+      <h4>İndir</h4>
+      <p>Releases sayfasından en son sürümü indir.</p>
+      <div class="step-arrow">◆</div>
+    </div>
+    <div class="step" style="position:relative;">
+      <div class="step-num">02</div>
+      <h4>Çıkart</h4>
+      <p>Arşivi istediğin klasöre çıkart.</p>
+      <div class="step-arrow">◆</div>
+    </div>
+    <div class="step" style="position:relative;">
+      <div class="step-num">03</div>
+      <h4>Başlat</h4>
+      <p>Uygulamayı çalıştır.</p>
+      <div class="step-arrow">◆</div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h4>Bağlan</h4>
+      <p>LoL istemcisini aç — Autrex otomatik algılar.</p>
+    </div>
+  </div>
+
+  <!-- CONFIGURATION -->
+  <div style="margin-top: 16px;" class="corner-deco" style="padding: 2px;">
+    <div style="border: 1px solid var(--border); background: var(--bg2); padding: 24px 28px;">
+      <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:3px; color:var(--blue); margin-bottom:10px;">CONFIG</div>
+          <div style="font-size:13px; color:var(--text); line-height:2;">
+            • Tercih edilen şampiyonlar<br>
+            • Otomatik ban listesi<br>
+            • Otomasyon seçenekleri
+          </div>
+        </div>
+        <div style="width:1px; background:var(--border);"></div>
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:3px; color:var(--blue); margin-bottom:10px;">STORAGE</div>
+          <div style="font-size:13px; color:var(--text); line-height:2;">
+            Tüm ayarlar <span style="color:var(--gold);">lokal olarak</span> saklanır.<br>
+            Veri transferi yok. Gizlilik tam.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROADMAP -->
+  <div class="divider"><span>Yol Haritası</span></div>
+
+  <div class="section-header">
+    <div class="section-icon">📌</div>
+    <span class="section-title">Yol Haritası</span>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="roadmap-grid">
+    <div class="roadmap-group">
+      <div class="roadmap-group-header">
+        <span>🧠 Akıllı Araçlar</span>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot"></div>
+        <div>
+          <span class="roadmap-item-title">Maç Analizi</span>
+          <span class="roadmap-item-desc">Geçmiş maçların detaylı istatistiksel analizi</span>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot"></div>
+        <div>
+          <span class="roadmap-item-title">Şampiyon Verileri</span>
+          <span class="roadmap-item-desc">Win rate, pick rate ve tier analizleri</span>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot"></div>
+        <div>
+          <span class="roadmap-item-title">Oyuncu Analizi</span>
+          <span class="roadmap-item-desc">Oyuncu bazlı performans takip sistemleri</span>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot"></div>
+        <div>
+          <span class="roadmap-item-title">Şampiyon Eşleşme</span>
+          <span class="roadmap-item-desc">Matchup analizi ve counter tavsiyeleri</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-group">
+      <div class="roadmap-group-header">
+        <span>📊 LP & Performans</span>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot"></div>
+        <div>
+          <span class="roadmap-item-title">LP Takibi</span>
+          <span class="roadmap-item-desc">Gün içindeki LP kazanım ve kayıp grafiği</span>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot"></div>
+        <div>
+          <span class="roadmap-item-title">Günlük LP Özeti</span>
+          <span class="roadmap-item-desc">Gün başlangıcı — gün sonu LP farkı</span>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot"></div>
+        <div>
+          <span class="roadmap-item-title">Performans Takibi</span>
+          <span class="roadmap-item-desc">KDA, vision, damage oranı ve daha fazlası</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-group">
+      <div class="roadmap-group-header">
+        <span>🎯 Oyun İçi Overlay</span>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot"></div>
+        <div>
+          <span class="roadmap-item-title">CS Takibi</span>
+          <span class="roadmap-item-desc">Dakikaya göre hedef CS vs gerçek CS karşılaştırması</span>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot"></div>
+        <div>
+          <span class="roadmap-item-title">Canlı Oyun Verileri</span>
+          <span class="roadmap-item-desc">Oyun içi kritik bilgileri overlay olarak sunar</span>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot"></div>
+        <div>
+          <span class="roadmap-item-title">Performans Göstergeleri</span>
+          <span class="roadmap-item-desc">Anlık performans değerlendirme sistemi</span>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-dot"></div>
+        <div>
+          <span class="roadmap-item-title">Çoklu Bölge Desteği</span>
+          <span class="roadmap-item-desc">TR, EUW, EUNE ve diğer sunucular</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTICE -->
+  <div class="divider"><span>Sorumluluk & Lisans</span></div>
+
+  <div class="notice-box">
+    <div class="notice-title">⚠ Sorumluluk Reddi</div>
+    <p>
+      Autrex bir League of Legends yardımcı aracıdır. Uygulamanın kullanımından doğabilecek sorumluluk kullanıcıya aittir.
+      Kullanıcıların Riot Games kullanım şartlarına uygun şekilde hareket etmesi tavsiye edilir.
+      Bu yazılım telif hakkıyla korunmaktadır; lisans ihlali, yetkisiz tersine mühendislik ve lisans atlatma girişimleri yasal yaptırımlara tabidir.
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">AUTREX</div>
+        <div class="footer-meta" style="margin-top: 8px;">
+          Geliştirici: <a href="#">Batuhan Arslan</a>
+        </div>
+      </div>
+      <div class="footer-actions">
+        <a href="https://github.com/Spryzenweb/Autrex" class="star-btn">⭐ Repo'ya Star At</a>
+        <a href="https://github.com/Spryzenweb/Autrex/releases" class="star-btn">⬇ İndir</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
