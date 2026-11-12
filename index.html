@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Autrex — League of Legends Automation Tool</title>
+<title>Autrex — League of Legends Companion</title>
+<meta name="description" content="Autrex 4.0: skin changer, 3000+ mod, istemci temaları, hesap yöneticisi ve şampiyon seçimi otomasyonu. Windows ve macOS.">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Exo+2:wght@100;300;400;600;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -676,6 +677,7 @@
   /* RESPONSIVE */
   @media (max-width: 600px) {
     .platform-row { flex-direction: column; }
+    .container { padding: 0 16px; }
     .steps { grid-template-columns: 1fr; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
     .step-arrow { display: none; }
@@ -690,31 +692,58 @@
   <!-- HERO -->
   <header>
     <div class="hero-badge">
-      <span>League of Legends Tool</span>
+      <span>Autrex 4.0 · Yeni altyapı</span>
     </div>
     <div class="logo">AUTREX</div>
-    <div class="logo-sub">Automation · Intelligence · Precision</div>
+    <div class="logo-sub">Skins · Mods · Automation</div>
     <p class="hero-desc">
-      League of Legends istemcisi için geliştirilmiş profesyonel otomasyon ve analiz platformu. LCU API tabanlı, yerelde çalışan, sıfır gecikme.
+      League of Legends için hepsi bir arada yardımcı uygulama. Skin changer, 3000+ mod, istemci temaları, hesap yöneticisi ve şampiyon seçimi otomasyonu tek yerde. Yeni Tauri altyapısıyla daha hızlı açılır, daha az bellek kullanır.
     </p>
     <div class="cta-row">
-      <a href="https://github.com/Spryzenweb/Autrex/releases" class="btn-primary">
+      <a href="https://github.com/Spryzenweb/Autrex/releases/latest" class="btn-primary">
         ⬇ Son Sürümü İndir
       </a>
-      <a href="https://github.com/Spryzenweb/Autrex" class="btn-outline">
-        ★ GitHub
+      <a href="https://autrex.app" class="btn-outline">
+        🌐 autrex.app
       </a>
     </div>
     <div style="margin-top: 24px;">
       <span class="status-badge">
         <span class="status-dot"></span>
-        AKTIF GELİŞTİRME
+        AKTİF GELİŞTİRME
       </span>
     </div>
   </header>
 
+  <!-- CUSTOMIZATION -->
+  <div class="divider"><span>Görünüm</span></div>
+
+  <div class="section-header">
+    <div class="section-icon">👗</div>
+    <span class="section-title">Kostüm & Mod</span>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="tag">SKIN_CHANGER</span>
+      <h3>Skin Changer</h3>
+      <p>Dolap tarzı ekran: büyük önizleme, kromalar ve tek tıkla kuşanma. Seçtiğin kostüm maç başlarken otomatik uygulanır.</p>
+    </div>
+    <div class="feature-card">
+      <span class="tag">MOD_LIBRARY</span>
+      <h3>Mod Kütüphanesi</h3>
+      <p>3000'den fazla mod tek yerde. Kategorilere ve şampiyona göre keşfet, tek tıkla indir ve yönet.</p>
+    </div>
+    <div class="feature-card">
+      <span class="tag">AUTREX_CLIENT</span>
+      <h3>Autrex Client</h3>
+      <p>League istemcisini temalarla yeniden tasarla. League önce açılmış olsa bile Autrex istemciye kendisi bağlanır.</p>
+    </div>
+  </div>
+
   <!-- AUTOMATION -->
-  <div class="divider"><span>Otomasyon Sistemi</span></div>
+  <div class="divider"><span>Otomasyon</span></div>
 
   <div class="section-header">
     <div class="section-icon">⚡</div>
@@ -726,17 +755,44 @@
     <div class="feature-card">
       <span class="tag">AUTO_ACCEPT</span>
       <h3>Oto Kabul</h3>
-      <p>Maç bulunduğunda istemciyi anlık olarak algılar ve otomatik kabul eder. Gecikme yok, manuel işlem gerekmez.</p>
+      <p>Maç bulunduğunda otomatik kabul eder. Bilgisayar başında olmasan da sıranı kaçırmazsın.</p>
     </div>
     <div class="feature-card">
       <span class="tag">AUTO_BAN / PICK</span>
       <h3>Oto Ban / Pick</h3>
-      <p>Belirlediğin şampiyon öncelik listesine göre ban ve pick aşamalarını tamamen otomatik yönetir.</p>
+      <p>Belirlediğin öncelik listesine göre şampiyonları otomatik yasaklar ve seçer.</p>
     </div>
     <div class="feature-card">
       <span class="tag">REMOTE_CTRL</span>
       <h3>Uzaktan Kontrol</h3>
-      <p>Harici sistemlerden LCU istemcisine bağlanarak gelişmiş otomasyon senaryoları oluşturabilirsin.</p>
+      <p>Telefonundan <span style="color:var(--gold);">autrex.app/remote</span> adresini aç; maçı kabul et ve şampiyon seçimini oradan yönet.</p>
+    </div>
+  </div>
+
+  <!-- TOOLS -->
+  <div class="divider"><span>Araçlar</span></div>
+
+  <div class="section-header">
+    <div class="section-icon">🧰</div>
+    <span class="section-title">Araçlar</span>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="tag">ACCOUNTS</span>
+      <h3>Hesap Yöneticisi</h3>
+      <p>Kayıtlı hesaplar, rank amblemleri ve hızlı giriş. Başka bir hesap açıksa önce ondan otomatik çıkış yapar.</p>
+    </div>
+    <div class="feature-card">
+      <span class="tag">CHAMP_SELECT</span>
+      <h3>Seçim Ekranı Verileri</h3>
+      <p>Şampiyon seçiminde takımının ve rakiplerin verilerini tek bakışta gör.</p>
+    </div>
+    <div class="feature-card">
+      <span class="tag">UTILITIES</span>
+      <h3>Diğer Araçlar</h3>
+      <p>Ganimet yöneticisi, toplu şampiyon alımı, profil ve rozet ayarları, istemci ayarları editörü.</p>
     </div>
   </div>
 
@@ -752,15 +808,15 @@
   <div class="platform-row" style="margin-bottom: 12px;">
     <div class="platform-item">
       <div class="platform-icon">🪟</div>
-      <span>Windows</span>
+      <span>Windows 10 / 11</span>
     </div>
     <div class="platform-item">
       <div class="platform-icon">🍎</div>
       <span>macOS</span>
     </div>
     <div class="platform-item">
-      <div class="platform-icon">⚛</div>
-      <span>Electron</span>
+      <div class="platform-icon">🦀</div>
+      <span>Tauri</span>
     </div>
     <div class="platform-item">
       <div class="platform-icon">🔗</div>
@@ -768,7 +824,7 @@
     </div>
   </div>
 
-  <div class="code-line">Riot Client API (LCU) üzerinden çalışır — harici sunucu bağlantısı gerektirmez</div>
+  <div class="code-line">macOS: Apple Silicon (M1/M2/M3/M4) için arm64.dmg, Intel Mac için x64.dmg</div>
 
   <!-- INSTALLATION -->
   <div class="divider"><span>Kurulum</span></div>
@@ -783,153 +839,46 @@
     <div class="step" style="position:relative;">
       <div class="step-num">01</div>
       <h4>İndir</h4>
-      <p>Releases sayfasından en son sürümü indir.</p>
+      <p>Windows için <span style="color:var(--gold);">setup.exe</span>, macOS için <span style="color:var(--gold);">.dmg</span> dosyasını indir.</p>
       <div class="step-arrow">◆</div>
     </div>
     <div class="step" style="position:relative;">
       <div class="step-num">02</div>
-      <h4>Çıkart</h4>
-      <p>Arşivi istediğin klasöre çıkart.</p>
+      <h4>Kur</h4>
+      <p>Kurulumu çalıştır. Windows'ta izin penceresini onayla.</p>
       <div class="step-arrow">◆</div>
     </div>
     <div class="step" style="position:relative;">
       <div class="step-num">03</div>
-      <h4>Başlat</h4>
-      <p>Uygulamayı çalıştır.</p>
+      <h4>Lisans</h4>
+      <p>Autrex'i aç ve lisans anahtarını gir.</p>
       <div class="step-arrow">◆</div>
     </div>
     <div class="step">
       <div class="step-num">04</div>
       <h4>Bağlan</h4>
-      <p>LoL istemcisini aç — Autrex otomatik algılar.</p>
+      <p>LoL istemcisini aç; Autrex otomatik bağlanır.</p>
     </div>
   </div>
 
-  <!-- CONFIGURATION -->
-  <div style="margin-top: 16px;" class="corner-deco" style="padding: 2px;">
+  <!-- UPDATE / PRIVACY -->
+  <div style="margin-top: 16px;" class="corner-deco">
     <div style="border: 1px solid var(--border); background: var(--bg2); padding: 24px 28px;">
       <div style="display: flex; gap: 24px; flex-wrap: wrap;">
-        <div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:3px; color:var(--blue); margin-bottom:10px;">CONFIG</div>
+        <div style="flex: 1; min-width: 220px;">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:3px; color:var(--blue); margin-bottom:10px;">3.x → 4.0</div>
           <div style="font-size:13px; color:var(--text); line-height:2;">
-            • Tercih edilen şampiyonlar<br>
-            • Otomatik ban listesi<br>
-            • Otomasyon seçenekleri
+            3.x kullanıyorsan uygulama 4.0'ı <span style="color:var(--gold);">kendisi</span> indirip kurar.<br>
+            Geçişten sonra lisans anahtarını bir kez yeniden gir.
           </div>
         </div>
         <div style="width:1px; background:var(--border);"></div>
-        <div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:3px; color:var(--blue); margin-bottom:10px;">STORAGE</div>
+        <div style="flex: 1; min-width: 220px;">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:3px; color:var(--blue); margin-bottom:10px;">GİZLİLİK</div>
           <div style="font-size:13px; color:var(--text); line-height:2;">
-            Tüm ayarlar <span style="color:var(--gold);">lokal olarak</span> saklanır.<br>
-            Veri transferi yok. Gizlilik tam.
+            Ayarların ve hesapların <span style="color:var(--gold);">bilgisayarında</span> saklanır.<br>
+            League istemcisiyle yalnızca yerel LCU API üzerinden konuşur.
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ROADMAP -->
-  <div class="divider"><span>Yol Haritası</span></div>
-
-  <div class="section-header">
-    <div class="section-icon">📌</div>
-    <span class="section-title">Yol Haritası</span>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="roadmap-grid">
-    <div class="roadmap-group">
-      <div class="roadmap-group-header">
-        <span>🧠 Akıllı Araçlar</span>
-      </div>
-      <div class="roadmap-item">
-        <div class="roadmap-dot"></div>
-        <div>
-          <span class="roadmap-item-title">Maç Analizi</span>
-          <span class="roadmap-item-desc">Geçmiş maçların detaylı istatistiksel analizi</span>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <div class="roadmap-dot"></div>
-        <div>
-          <span class="roadmap-item-title">Şampiyon Verileri</span>
-          <span class="roadmap-item-desc">Win rate, pick rate ve tier analizleri</span>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <div class="roadmap-dot"></div>
-        <div>
-          <span class="roadmap-item-title">Oyuncu Analizi</span>
-          <span class="roadmap-item-desc">Oyuncu bazlı performans takip sistemleri</span>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <div class="roadmap-dot"></div>
-        <div>
-          <span class="roadmap-item-title">Şampiyon Eşleşme</span>
-          <span class="roadmap-item-desc">Matchup analizi ve counter tavsiyeleri</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="roadmap-group">
-      <div class="roadmap-group-header">
-        <span>📊 LP & Performans</span>
-      </div>
-      <div class="roadmap-item">
-        <div class="roadmap-dot"></div>
-        <div>
-          <span class="roadmap-item-title">LP Takibi</span>
-          <span class="roadmap-item-desc">Gün içindeki LP kazanım ve kayıp grafiği</span>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <div class="roadmap-dot"></div>
-        <div>
-          <span class="roadmap-item-title">Günlük LP Özeti</span>
-          <span class="roadmap-item-desc">Gün başlangıcı — gün sonu LP farkı</span>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <div class="roadmap-dot"></div>
-        <div>
-          <span class="roadmap-item-title">Performans Takibi</span>
-          <span class="roadmap-item-desc">KDA, vision, damage oranı ve daha fazlası</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="roadmap-group">
-      <div class="roadmap-group-header">
-        <span>🎯 Oyun İçi Overlay</span>
-      </div>
-      <div class="roadmap-item">
-        <div class="roadmap-dot"></div>
-        <div>
-          <span class="roadmap-item-title">CS Takibi</span>
-          <span class="roadmap-item-desc">Dakikaya göre hedef CS vs gerçek CS karşılaştırması</span>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <div class="roadmap-dot"></div>
-        <div>
-          <span class="roadmap-item-title">Canlı Oyun Verileri</span>
-          <span class="roadmap-item-desc">Oyun içi kritik bilgileri overlay olarak sunar</span>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <div class="roadmap-dot"></div>
-        <div>
-          <span class="roadmap-item-title">Performans Göstergeleri</span>
-          <span class="roadmap-item-desc">Anlık performans değerlendirme sistemi</span>
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <div class="roadmap-dot"></div>
-        <div>
-          <span class="roadmap-item-title">Çoklu Bölge Desteği</span>
-          <span class="roadmap-item-desc">TR, EUW, EUNE ve diğer sunucular</span>
         </div>
       </div>
     </div>
@@ -941,7 +890,7 @@
   <div class="notice-box">
     <div class="notice-title">⚠ Sorumluluk Reddi</div>
     <p>
-      Autrex bir League of Legends yardımcı aracıdır. Uygulamanın kullanımından doğabilecek sorumluluk kullanıcıya aittir.
+      Autrex bir League of Legends yardımcı aracıdır ve Riot Games ile bağlantılı değildir. Uygulamanın kullanımından doğabilecek sorumluluk kullanıcıya aittir.
       Kullanıcıların Riot Games kullanım şartlarına uygun şekilde hareket etmesi tavsiye edilir.
       Bu yazılım telif hakkıyla korunmaktadır; lisans ihlali, yetkisiz tersine mühendislik ve lisans atlatma girişimleri yasal yaptırımlara tabidir.
     </p>
@@ -953,12 +902,12 @@
       <div>
         <div class="footer-logo">AUTREX</div>
         <div class="footer-meta" style="margin-top: 8px;">
-          Geliştirici: <a href="#">Batuhan Arslan</a>
+          Geliştirici: <a href="https://autrex.app">Batuhan Arslan</a>
         </div>
       </div>
       <div class="footer-actions">
         <a href="https://github.com/Spryzenweb/Autrex" class="star-btn">⭐ Repo'ya Star At</a>
-        <a href="https://github.com/Spryzenweb/Autrex/releases" class="star-btn">⬇ İndir</a>
+        <a href="https://github.com/Spryzenweb/Autrex/releases/latest" class="star-btn">⬇ İndir</a>
       </div>
     </div>
   </footer>
