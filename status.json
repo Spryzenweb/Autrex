@@ -4,7 +4,8 @@
       "id": "win-skin-fixed-4.0.15",
       "level": "fix",
       "platforms": [
-        "windows"
+        "windows",
+        "mac"
       ],
       "tr": {
         "title": "Windows'ta Skin Changer düzeldi",
