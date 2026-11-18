@@ -96,96 +96,96 @@
       }
     },
     {
-      "id": "live-fixed-4.0.14",
-      "level": "fix",
-      "minVersion": "4.0.14",
+      "id": "live-ctrlx-2026-11",
+      "level": "warn",
+      "maxVersion": "4.0.15",
       "tr": {
-        "title": "Canlı maç sorunu düzeltildi",
-        "body": "Canlı maç panelinin kapanmama sorunu giderildi. Panel artık Ctrl+X, \"Gizle\" düğmesi ya da rozete tıklayarak açılıp kapanıyor."
+        "title": "Canlı maç paneli Ctrl+X ile kapanmayabilir",
+        "body": "Bir sonraki güncellemede düzelteceğiz. Şimdilik paneli \"Gizle\" düğmesiyle ya da rozete tıklayarak kapat. İstersen Ayarlar'dan \"Oyun üstü görünüm\"ü kapatıp çerçeveli pencerede kullan veya \"Canlı maç ekranı\"nı devre dışı bırak."
       },
       "en": {
-        "title": "Live game issue fixed",
-        "body": "The live game panel not closing is fixed. Open and close it with Ctrl+X, the \"Hide\" button or by clicking the badge."
+        "title": "Live game panel may not close with Ctrl+X",
+        "body": "We'll fix this in the next update. For now, close the panel with the \"Hide\" button or by clicking the badge. You can also turn off \"In-game overlay\" in Settings to use the framed window, or disable \"Live game screen\"."
       },
       "de": {
-        "title": "Live-Spiel-Problem behoben",
-        "body": "Das Live-Spiel-Panel schließt sich jetzt wieder. Öffnen und schließen mit Strg+X, der Schaltfläche „Ausblenden“ oder per Klick auf das Abzeichen."
+        "title": "Live-Spiel-Panel schließt sich evtl. nicht mit Strg+X",
+        "body": "Wir beheben das im nächsten Update. Schließe das Panel bis dahin mit der Schaltfläche \"Hide\" oder per Klick auf das Abzeichen. Du kannst auch in den Einstellungen \"In-game overlay\" ausschalten und das gerahmte Fenster nutzen oder \"Live game screen\" deaktivieren."
       },
       "fr": {
-        "title": "Problème de partie en direct corrigé",
-        "body": "Le panneau de partie en direct se ferme de nouveau. Ouvrez-le et fermez-le avec Ctrl+X, le bouton « Masquer » ou en cliquant sur le badge."
+        "title": "Le panneau de partie en direct peut ne pas se fermer avec Ctrl+X",
+        "body": "Nous corrigerons cela dans la prochaine mise à jour. En attendant, fermez le panneau avec le bouton \"Hide\" ou en cliquant sur le badge. Vous pouvez aussi désactiver \"In-game overlay\" dans les paramètres pour utiliser la fenêtre encadrée, ou désactiver \"Live game screen\"."
       },
       "es": {
-        "title": "Problema de partida en vivo solucionado",
-        "body": "El panel de partida en vivo ya se cierra. Ábrelo y ciérralo con Ctrl+X, el botón «Ocultar» o haciendo clic en la insignia."
+        "title": "El panel de partida en vivo puede no cerrarse con Ctrl+X",
+        "body": "Lo solucionaremos en la próxima actualización. Por ahora, cierra el panel con el botón \"Hide\" o haciendo clic en la insignia. También puedes desactivar \"In-game overlay\" en Ajustes para usar la ventana con marco, o desactivar \"Live game screen\"."
       },
       "it": {
-        "title": "Problema della partita live risolto",
-        "body": "Il pannello della partita live ora si chiude. Aprilo e chiudilo con Ctrl+X, il pulsante «Nascondi» o cliccando il badge."
+        "title": "Il pannello della partita live potrebbe non chiudersi con Ctrl+X",
+        "body": "Lo correggeremo nel prossimo aggiornamento. Per ora chiudi il pannello con il pulsante \"Hide\" o cliccando il badge. Puoi anche disattivare \"In-game overlay\" nelle Impostazioni per usare la finestra con cornice, oppure disattivare \"Live game screen\"."
       },
       "pt": {
-        "title": "Problema da partida ao vivo corrigido",
-        "body": "O painel da partida ao vivo voltou a fechar. Abra e feche com Ctrl+X, o botão \"Ocultar\" ou clicando no selo."
+        "title": "O painel da partida ao vivo pode não fechar com Ctrl+X",
+        "body": "Vamos corrigir isso na próxima atualização. Por enquanto, feche o painel com o botão \"Hide\" ou clicando no selo. Você também pode desativar \"In-game overlay\" nas Configurações para usar a janela com moldura, ou desativar \"Live game screen\"."
       },
       "pl": {
-        "title": "Naprawiono problem z meczem na żywo",
-        "body": "Panel meczu na żywo znów się zamyka. Otwieraj i zamykaj go Ctrl+X, przyciskiem „Ukryj” lub klikając plakietkę."
+        "title": "Panel meczu na żywo może nie zamykać się Ctrl+X",
+        "body": "Naprawimy to w następnej aktualizacji. Na razie zamykaj panel przyciskiem \"Hide\" lub klikając plakietkę. Możesz też wyłączyć \"In-game overlay\" w Ustawieniach i używać okna z ramką albo wyłączyć \"Live game screen\"."
       },
       "ru": {
-        "title": "Проблема с текущим матчем исправлена",
-        "body": "Панель текущего матча снова закрывается. Открывайте и закрывайте её с помощью Ctrl+X, кнопки «Скрыть» или нажатием на значок."
+        "title": "Панель текущего матча может не закрываться по Ctrl+X",
+        "body": "Исправим это в следующем обновлении. Пока закрывайте панель кнопкой \"Hide\" или нажатием на значок. Также можно отключить \"In-game overlay\" в настройках и пользоваться окном с рамкой или отключить \"Live game screen\"."
       },
       "cs": {
-        "title": "Problém s živou hrou opraven",
-        "body": "Panel živé hry se opět zavírá. Otevřete a zavřete ho pomocí Ctrl+X, tlačítka „Skrýt“ nebo kliknutím na odznak."
+        "title": "Panel živé hry se možná nezavře pomocí Ctrl+X",
+        "body": "Opravíme to v příští aktualizaci. Zatím panel zavírejte tlačítkem \"Hide\" nebo kliknutím na odznak. Můžete také v Nastavení vypnout \"In-game overlay\" a používat okno s rámečkem, nebo vypnout \"Live game screen\"."
       },
       "hu": {
-        "title": "Élő meccs hiba javítva",
-        "body": "Az élő meccs panel újra bezárható. Nyisd és zárd Ctrl+X-szel, az „Elrejtés” gombbal vagy a jelvényre kattintva."
+        "title": "Az élő meccs panel lehet, hogy nem zárul be Ctrl+X-szel",
+        "body": "A következő frissítésben javítjuk. Addig zárd be a panelt a(z) \"Hide\" gombbal vagy a jelvényre kattintva. A Beállításokban kikapcsolhatod a(z) \"In-game overlay\" opciót is a keretes ablakhoz, vagy letilthatod a(z) \"Live game screen\" funkciót."
       },
       "ro": {
-        "title": "Problema meciului live a fost rezolvată",
-        "body": "Panoul meciului live se închide din nou. Deschide-l și închide-l cu Ctrl+X, butonul „Ascunde” sau dând clic pe insignă."
+        "title": "Panoul meciului live s-ar putea să nu se închidă cu Ctrl+X",
+        "body": "Vom rezolva asta în următoarea actualizare. Până atunci, închide panoul cu butonul \"Hide\" sau dând clic pe insignă. Poți și să dezactivezi \"In-game overlay\" din Setări pentru fereastra cu cadru, sau să dezactivezi \"Live game screen\"."
       },
       "el": {
-        "title": "Το πρόβλημα του ζωντανού αγώνα διορθώθηκε",
-        "body": "Το πάνελ ζωντανού αγώνα κλείνει ξανά. Άνοιξέ το και κλείσ' το με Ctrl+X, το κουμπί «Απόκρυψη» ή κάνοντας κλικ στο σήμα."
+        "title": "Το πάνελ ζωντανού αγώνα μπορεί να μην κλείνει με Ctrl+X",
+        "body": "Θα το διορθώσουμε στην επόμενη ενημέρωση. Προς το παρόν κλείσε το πάνελ με το κουμπί \"Hide\" ή κάνοντας κλικ στο σήμα. Μπορείς επίσης να απενεργοποιήσεις το \"In-game overlay\" στις Ρυθμίσεις για παράθυρο με πλαίσιο ή να απενεργοποιήσεις το \"Live game screen\"."
       },
       "ja": {
-        "title": "ライブゲームの不具合を修正",
-        "body": "ライブゲームパネルが閉じない不具合を修正しました。Ctrl+X、「隠す」ボタン、またはバッジのクリックで開閉できます。"
+        "title": "ライブゲームパネルが Ctrl+X で閉じない場合があります",
+        "body": "次回のアップデートで修正します。それまではパネルを \"Hide\" ボタンまたはバッジのクリックで閉じてください。設定で \"In-game overlay\" をオフにして枠付きウィンドウで使うか、\"Live game screen\" を無効にすることもできます。"
       },
       "ko": {
-        "title": "실시간 게임 문제 해결",
-        "body": "실시간 게임 패널이 닫히지 않던 문제를 해결했습니다. Ctrl+X, '숨기기' 버튼 또는 배지를 클릭해 열고 닫을 수 있습니다."
+        "title": "실시간 게임 패널이 Ctrl+X로 닫히지 않을 수 있습니다",
+        "body": "다음 업데이트에서 수정하겠습니다. 그동안에는 \"Hide\" 버튼이나 배지를 클릭해 패널을 닫으세요. 설정에서 \"In-game overlay\"를 꺼서 테두리 있는 창으로 사용하거나 \"Live game screen\"을 비활성화할 수도 있습니다."
       },
       "zh_CN": {
-        "title": "实时对局问题已修复",
-        "body": "实时对局面板无法关闭的问题已修复。可用 Ctrl+X、“隐藏”按钮或点击徽章来打开和关闭。"
-      },
-      "zh": {
-        "title": "实时对局问题已修复",
-        "body": "实时对局面板无法关闭的问题已修复。可用 Ctrl+X、“隐藏”按钮或点击徽章来打开和关闭。"
+        "title": "实时对局面板可能无法用 Ctrl+X 关闭",
+        "body": "我们会在下次更新中修复。目前请用 \"Hide\" 按钮或点击徽章关闭面板。也可以在设置中关闭 \"In-game overlay\" 改用带边框的窗口，或停用 \"Live game screen\"。"
       },
       "zh_TW": {
-        "title": "即時對局問題已修復",
-        "body": "即時對局面板無法關閉的問題已修復。可用 Ctrl+X、「隱藏」按鈕或點擊徽章來開關。"
+        "title": "即時對局面板可能無法用 Ctrl+X 關閉",
+        "body": "我們會在下次更新中修正。目前請用 \"Hide\" 按鈕或點擊徽章關閉面板。也可以在設定中關閉 \"In-game overlay\" 改用有邊框的視窗，或停用 \"Live game screen\"。"
       },
       "ar": {
-        "title": "تم إصلاح مشكلة المباراة المباشرة",
-        "body": "تم إصلاح عدم إغلاق لوحة المباراة المباشرة. افتحها وأغلقها باستخدام Ctrl+X أو زر \"إخفاء\" أو بالنقر على الشارة."
+        "title": "قد لا تُغلق لوحة المباراة المباشرة باستخدام Ctrl+X",
+        "body": "سنصلح ذلك في التحديث القادم. حاليًا، أغلق اللوحة بزر \"Hide\" أو بالنقر على الشارة. يمكنك أيضًا إيقاف \"In-game overlay\" من الإعدادات لاستخدام النافذة ذات الإطار، أو تعطيل \"Live game screen\"."
       },
       "th": {
-        "title": "แก้ไขปัญหาเกมสดแล้ว",
-        "body": "แผงเกมสดปิดได้ตามปกติแล้ว เปิดและปิดด้วย Ctrl+X ปุ่ม \"ซ่อน\" หรือคลิกที่ป้าย"
+        "title": "แผงเกมสดอาจปิดด้วย Ctrl+X ไม่ได้",
+        "body": "เราจะแก้ไขในอัปเดตถัดไป ระหว่างนี้ให้ปิดแผงด้วยปุ่ม \"Hide\" หรือคลิกที่ป้าย หรือปิด \"In-game overlay\" ในการตั้งค่าเพื่อใช้หน้าต่างแบบมีกรอบ หรือปิดใช้งาน \"Live game screen\""
       },
       "vi": {
-        "title": "Đã sửa lỗi trận đấu trực tiếp",
-        "body": "Bảng trận đấu trực tiếp đã đóng được bình thường. Mở và đóng bằng Ctrl+X, nút \"Ẩn\" hoặc nhấp vào huy hiệu."
+        "title": "Bảng trận đấu trực tiếp có thể không đóng bằng Ctrl+X",
+        "body": "Chúng tôi sẽ sửa lỗi này trong bản cập nhật tới. Tạm thời hãy đóng bảng bằng nút \"Hide\" hoặc nhấp vào huy hiệu. Bạn cũng có thể tắt \"In-game overlay\" trong Cài đặt để dùng cửa sổ có khung, hoặc tắt \"Live game screen\"."
       },
       "id_ID": {
-        "title": "Masalah pertandingan langsung diperbaiki",
-        "body": "Panel pertandingan langsung kini bisa ditutup. Buka dan tutup dengan Ctrl+X, tombol \"Sembunyikan\", atau klik lencananya."
+        "title": "Panel pertandingan langsung mungkin tidak tertutup dengan Ctrl+X",
+        "body": "Kami akan memperbaikinya di pembaruan berikutnya. Untuk sementara, tutup panel dengan tombol \"Hide\" atau klik lencananya. Kamu juga bisa mematikan \"In-game overlay\" di Pengaturan untuk memakai jendela berbingkai, atau menonaktifkan \"Live game screen\"."
+      },
+      "zh": {
+        "title": "实时对局面板可能无法用 Ctrl+X 关闭",
+        "body": "我们会在下次更新中修复。目前请用 \"Hide\" 按钮或点击徽章关闭面板。也可以在设置中关闭 \"In-game overlay\" 改用带边框的窗口，或停用 \"Live game screen\"。"
       }
     }
   ]
