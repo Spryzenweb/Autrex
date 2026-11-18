@@ -1,9 +1,14 @@
 {
   "notices": [
     {
-      "id": "win-skin-2026-11",
+      "id": {
+        "title": "Masalah Skin Changer",
+        "body": "Kami mengetahui masalah Skin Changer di beberapa perangkat Windows dan sedang memperbaikinya."
+      },
       "level": "warn",
-      "platforms": ["windows"],
+      "platforms": [
+        "windows"
+      ],
       "tr": {
         "title": "Skin Changer sorunu",
         "body": "Bazı Windows cihazlarda Skin Changer sorunlarının farkındayız, üzerinde çalışıyoruz."
@@ -11,6 +16,82 @@
       "en": {
         "title": "Skin Changer issue",
         "body": "We're aware of Skin Changer issues on some Windows devices and are working on a fix."
+      },
+      "de": {
+        "title": "Skin-Changer-Problem",
+        "body": "Wir wissen von Skin-Changer-Problemen auf einigen Windows-Geräten und arbeiten an einer Lösung."
+      },
+      "fr": {
+        "title": "Problème du Skin Changer",
+        "body": "Nous sommes au courant de problèmes du Skin Changer sur certains appareils Windows et travaillons à une solution."
+      },
+      "es": {
+        "title": "Problema del Skin Changer",
+        "body": "Sabemos que hay problemas con el Skin Changer en algunos dispositivos Windows y estamos trabajando en ello."
+      },
+      "it": {
+        "title": "Problema dello Skin Changer",
+        "body": "Siamo a conoscenza di problemi dello Skin Changer su alcuni dispositivi Windows e ci stiamo lavorando."
+      },
+      "pt": {
+        "title": "Problema no Skin Changer",
+        "body": "Sabemos de problemas no Skin Changer em alguns dispositivos Windows e estamos trabalhando nisso."
+      },
+      "pl": {
+        "title": "Problem ze Skin Changerem",
+        "body": "Wiemy o problemach ze Skin Changerem na niektórych urządzeniach z Windows i pracujemy nad poprawką."
+      },
+      "ru": {
+        "title": "Проблема со Skin Changer",
+        "body": "Мы знаем о проблемах со Skin Changer на некоторых устройствах с Windows и работаем над исправлением."
+      },
+      "cs": {
+        "title": "Problém se Skin Changerem",
+        "body": "Víme o problémech se Skin Changerem na některých zařízeních s Windows a pracujeme na opravě."
+      },
+      "hu": {
+        "title": "Skin Changer hiba",
+        "body": "Tudunk a Skin Changer hibáiról egyes Windows-eszközökön, és dolgozunk a javításon."
+      },
+      "ro": {
+        "title": "Problemă cu Skin Changer",
+        "body": "Știm de problemele cu Skin Changer pe unele dispozitive Windows și lucrăm la o soluție."
+      },
+      "el": {
+        "title": "Πρόβλημα με το Skin Changer",
+        "body": "Γνωρίζουμε προβλήματα με το Skin Changer σε ορισμένες συσκευές Windows και εργαζόμαστε για τη διόρθωση."
+      },
+      "ja": {
+        "title": "Skin Changer の不具合",
+        "body": "一部の Windows 端末で Skin Changer の不具合を確認しており、修正に取り組んでいます。"
+      },
+      "ko": {
+        "title": "Skin Changer 문제",
+        "body": "일부 Windows 기기에서 발생하는 Skin Changer 문제를 알고 있으며 해결 중입니다."
+      },
+      "zh_CN": {
+        "title": "Skin Changer 问题",
+        "body": "我们已注意到部分 Windows 设备上的 Skin Changer 问题，正在修复中。"
+      },
+      "zh": {
+        "title": "Skin Changer 问题",
+        "body": "我们已注意到部分 Windows 设备上的 Skin Changer 问题，正在修复中。"
+      },
+      "zh_TW": {
+        "title": "Skin Changer 問題",
+        "body": "我們已注意到部分 Windows 裝置上的 Skin Changer 問題，正在修復中。"
+      },
+      "ar": {
+        "title": "مشكلة في Skin Changer",
+        "body": "نعلم بوجود مشكلات في Skin Changer على بعض أجهزة Windows ونعمل على إصلاحها."
+      },
+      "th": {
+        "title": "ปัญหา Skin Changer",
+        "body": "เราทราบถึงปัญหา Skin Changer ในอุปกรณ์ Windows บางเครื่องและกำลังแก้ไขอยู่"
+      },
+      "vi": {
+        "title": "Sự cố Skin Changer",
+        "body": "Chúng tôi đã biết sự cố Skin Changer trên một số thiết bị Windows và đang khắc phục."
       }
     }
   ]
