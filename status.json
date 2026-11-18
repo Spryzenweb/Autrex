@@ -93,6 +93,98 @@
         "title": "Sự cố Skin Changer",
         "body": "Chúng tôi đã biết sự cố Skin Changer trên một số thiết bị Windows và đang khắc phục."
       }
+    },
+    {
+      "id": {
+        "title": "Masalah pertandingan langsung diperbaiki",
+        "body": "Panel pertandingan langsung kini bisa ditutup. Buka dan tutup dengan Ctrl+X, tombol \"Sembunyikan\", atau klik lencananya."
+      },
+      "level": "fix",
+      "minVersion": "4.0.14",
+      "tr": {
+        "title": "Canlı maç sorunu düzeltildi",
+        "body": "Canlı maç panelinin kapanmama sorunu giderildi. Panel artık Ctrl+X, \"Gizle\" düğmesi ya da rozete tıklayarak açılıp kapanıyor."
+      },
+      "en": {
+        "title": "Live game issue fixed",
+        "body": "The live game panel not closing is fixed. Open and close it with Ctrl+X, the \"Hide\" button or by clicking the badge."
+      },
+      "de": {
+        "title": "Live-Spiel-Problem behoben",
+        "body": "Das Live-Spiel-Panel schließt sich jetzt wieder. Öffnen und schließen mit Strg+X, der Schaltfläche „Ausblenden“ oder per Klick auf das Abzeichen."
+      },
+      "fr": {
+        "title": "Problème de partie en direct corrigé",
+        "body": "Le panneau de partie en direct se ferme de nouveau. Ouvrez-le et fermez-le avec Ctrl+X, le bouton « Masquer » ou en cliquant sur le badge."
+      },
+      "es": {
+        "title": "Problema de partida en vivo solucionado",
+        "body": "El panel de partida en vivo ya se cierra. Ábrelo y ciérralo con Ctrl+X, el botón «Ocultar» o haciendo clic en la insignia."
+      },
+      "it": {
+        "title": "Problema della partita live risolto",
+        "body": "Il pannello della partita live ora si chiude. Aprilo e chiudilo con Ctrl+X, il pulsante «Nascondi» o cliccando il badge."
+      },
+      "pt": {
+        "title": "Problema da partida ao vivo corrigido",
+        "body": "O painel da partida ao vivo voltou a fechar. Abra e feche com Ctrl+X, o botão \"Ocultar\" ou clicando no selo."
+      },
+      "pl": {
+        "title": "Naprawiono problem z meczem na żywo",
+        "body": "Panel meczu na żywo znów się zamyka. Otwieraj i zamykaj go Ctrl+X, przyciskiem „Ukryj” lub klikając plakietkę."
+      },
+      "ru": {
+        "title": "Проблема с текущим матчем исправлена",
+        "body": "Панель текущего матча снова закрывается. Открывайте и закрывайте её с помощью Ctrl+X, кнопки «Скрыть» или нажатием на значок."
+      },
+      "cs": {
+        "title": "Problém s živou hrou opraven",
+        "body": "Panel živé hry se opět zavírá. Otevřete a zavřete ho pomocí Ctrl+X, tlačítka „Skrýt“ nebo kliknutím na odznak."
+      },
+      "hu": {
+        "title": "Élő meccs hiba javítva",
+        "body": "Az élő meccs panel újra bezárható. Nyisd és zárd Ctrl+X-szel, az „Elrejtés” gombbal vagy a jelvényre kattintva."
+      },
+      "ro": {
+        "title": "Problema meciului live a fost rezolvată",
+        "body": "Panoul meciului live se închide din nou. Deschide-l și închide-l cu Ctrl+X, butonul „Ascunde” sau dând clic pe insignă."
+      },
+      "el": {
+        "title": "Το πρόβλημα του ζωντανού αγώνα διορθώθηκε",
+        "body": "Το πάνελ ζωντανού αγώνα κλείνει ξανά. Άνοιξέ το και κλείσ' το με Ctrl+X, το κουμπί «Απόκρυψη» ή κάνοντας κλικ στο σήμα."
+      },
+      "ja": {
+        "title": "ライブゲームの不具合を修正",
+        "body": "ライブゲームパネルが閉じない不具合を修正しました。Ctrl+X、「隠す」ボタン、またはバッジのクリックで開閉できます。"
+      },
+      "ko": {
+        "title": "실시간 게임 문제 해결",
+        "body": "실시간 게임 패널이 닫히지 않던 문제를 해결했습니다. Ctrl+X, '숨기기' 버튼 또는 배지를 클릭해 열고 닫을 수 있습니다."
+      },
+      "zh_CN": {
+        "title": "实时对局问题已修复",
+        "body": "实时对局面板无法关闭的问题已修复。可用 Ctrl+X、“隐藏”按钮或点击徽章来打开和关闭。"
+      },
+      "zh": {
+        "title": "实时对局问题已修复",
+        "body": "实时对局面板无法关闭的问题已修复。可用 Ctrl+X、“隐藏”按钮或点击徽章来打开和关闭。"
+      },
+      "zh_TW": {
+        "title": "即時對局問題已修復",
+        "body": "即時對局面板無法關閉的問題已修復。可用 Ctrl+X、「隱藏」按鈕或點擊徽章來開關。"
+      },
+      "ar": {
+        "title": "تم إصلاح مشكلة المباراة المباشرة",
+        "body": "تم إصلاح عدم إغلاق لوحة المباراة المباشرة. افتحها وأغلقها باستخدام Ctrl+X أو زر \"إخفاء\" أو بالنقر على الشارة."
+      },
+      "th": {
+        "title": "แก้ไขปัญหาเกมสดแล้ว",
+        "body": "แผงเกมสดปิดได้ตามปกติแล้ว เปิดและปิดด้วย Ctrl+X ปุ่ม \"ซ่อน\" หรือคลิกที่ป้าย"
+      },
+      "vi": {
+        "title": "Đã sửa lỗi trận đấu trực tiếp",
+        "body": "Bảng trận đấu trực tiếp đã đóng được bình thường. Mở và đóng bằng Ctrl+X, nút \"Ẩn\" hoặc nhấp vào huy hiệu."
+      }
     }
   ]
 }
