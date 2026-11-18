@@ -1,0 +1,17 @@
+{
+  "notices": [
+    {
+      "id": "win-skin-2026-11",
+      "level": "warn",
+      "platforms": ["windows"],
+      "tr": {
+        "title": "Windows'ta kostüm sorunu",
+        "body": "Bazı Windows kullanıcılarında kostümler oyuna uygulanmıyor. Sorunun farkındayız ve üzerinde çalışıyoruz."
+      },
+      "en": {
+        "title": "Skin issue on Windows",
+        "body": "Skins don't apply in game for some Windows users. We're aware of it and working on a fix."
+      }
+    }
+  ]
+}
