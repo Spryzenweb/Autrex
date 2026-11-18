@@ -5,12 +5,12 @@
       "level": "warn",
       "platforms": ["windows"],
       "tr": {
-        "title": "Windows'ta kostüm sorunu",
-        "body": "Bazı Windows kullanıcılarında kostümler oyuna uygulanmıyor. Sorunun farkındayız ve üzerinde çalışıyoruz."
+        "title": "Skin Changer sorunu",
+        "body": "Bazı Windows cihazlarda Skin Changer sorunlarının farkındayız, üzerinde çalışıyoruz."
       },
       "en": {
-        "title": "Skin issue on Windows",
-        "body": "Skins don't apply in game for some Windows users. We're aware of it and working on a fix."
+        "title": "Skin Changer issue",
+        "body": "We're aware of Skin Changer issues on some Windows devices and are working on a fix."
       }
     }
   ]
