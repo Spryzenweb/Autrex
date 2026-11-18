@@ -1,10 +1,7 @@
 {
   "notices": [
     {
-      "id": {
-        "title": "Masalah Skin Changer",
-        "body": "Kami mengetahui masalah Skin Changer di beberapa perangkat Windows dan sedang memperbaikinya."
-      },
+      "id": "win-skin-2026-11",
       "level": "warn",
       "platforms": [
         "windows"
@@ -92,13 +89,14 @@
       "vi": {
         "title": "Sự cố Skin Changer",
         "body": "Chúng tôi đã biết sự cố Skin Changer trên một số thiết bị Windows và đang khắc phục."
+      },
+      "id_ID": {
+        "title": "Masalah Skin Changer",
+        "body": "Kami mengetahui masalah Skin Changer di beberapa perangkat Windows dan sedang memperbaikinya."
       }
     },
     {
-      "id": {
-        "title": "Masalah pertandingan langsung diperbaiki",
-        "body": "Panel pertandingan langsung kini bisa ditutup. Buka dan tutup dengan Ctrl+X, tombol \"Sembunyikan\", atau klik lencananya."
-      },
+      "id": "live-fixed-4.0.14",
       "level": "fix",
       "minVersion": "4.0.14",
       "tr": {
@@ -184,6 +182,10 @@
       "vi": {
         "title": "Đã sửa lỗi trận đấu trực tiếp",
         "body": "Bảng trận đấu trực tiếp đã đóng được bình thường. Mở và đóng bằng Ctrl+X, nút \"Ẩn\" hoặc nhấp vào huy hiệu."
+      },
+      "id_ID": {
+        "title": "Masalah pertandingan langsung diperbaiki",
+        "body": "Panel pertandingan langsung kini bisa ditutup. Buka dan tutup dengan Ctrl+X, tombol \"Sembunyikan\", atau klik lencananya."
       }
     }
   ]
