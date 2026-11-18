@@ -1,98 +1,98 @@
 {
   "notices": [
     {
-      "id": "win-skin-2026-11",
-      "level": "warn",
+      "id": "win-skin-fixed-4.0.15",
+      "level": "fix",
       "platforms": [
         "windows"
       ],
       "tr": {
-        "title": "Windows'ta Skin Changer",
-        "body": "Son LoL yamasıyla Windows'ta kostüm uygulama bozuldu; bu diğer skin uygulamalarını da etkiliyor. En kısa sürede bir güncelleme ile düzelteceğiz."
+        "title": "Windows'ta Skin Changer düzeldi",
+        "body": "4.0.15 ile Windows'ta kostüm uygulama yeniden çalışıyor. Eski bir sürümdeysen uygulamayı güncelle."
       },
       "en": {
-        "title": "Skin Changer on Windows",
-        "body": "The latest LoL patch broke applying skins on Windows; other skin changers are affected too. We'll ship a fix in an update as soon as possible."
+        "title": "Skin Changer on Windows fixed",
+        "body": "Applying skins on Windows works again in 4.0.15. If you're on an older version, update the app."
       },
       "de": {
-        "title": "Skin Changer unter Windows",
-        "body": "Der letzte LoL-Patch hat das Anwenden von Skins unter Windows beschädigt; auch andere Skin-Changer sind betroffen. Wir liefern so bald wie möglich ein Update mit einer Lösung."
+        "title": "Skin Changer unter Windows behoben",
+        "body": "Das Anwenden von Skins unter Windows funktioniert in 4.0.15 wieder. Falls du eine ältere Version nutzt, aktualisiere die App."
       },
       "fr": {
-        "title": "Skin Changer sous Windows",
-        "body": "Le dernier patch de LoL a cassé l'application des skins sous Windows ; d'autres skin changers sont aussi touchés. Nous publierons un correctif dès que possible."
+        "title": "Skin Changer sous Windows corrigé",
+        "body": "L'application des skins sous Windows fonctionne de nouveau dans la 4.0.15. Si vous avez une version plus ancienne, mettez l'application à jour."
       },
       "es": {
-        "title": "Skin Changer en Windows",
-        "body": "El último parche de LoL rompió la aplicación de skins en Windows; también afecta a otros skin changers. Publicaremos una actualización con la solución lo antes posible."
+        "title": "Skin Changer en Windows solucionado",
+        "body": "Aplicar skins en Windows vuelve a funcionar en la 4.0.15. Si tienes una versión anterior, actualiza la app."
       },
       "it": {
-        "title": "Skin Changer su Windows",
-        "body": "L'ultima patch di LoL ha rotto l'applicazione delle skin su Windows; anche altri skin changer ne sono colpiti. Rilasceremo un aggiornamento con la correzione il prima possibile."
+        "title": "Skin Changer su Windows risolto",
+        "body": "L'applicazione delle skin su Windows funziona di nuovo nella 4.0.15. Se hai una versione precedente, aggiorna l'app."
       },
       "pt": {
-        "title": "Skin Changer no Windows",
-        "body": "O último patch do LoL quebrou a aplicação de skins no Windows; outros skin changers também foram afetados. Vamos lançar uma atualização com a correção o quanto antes."
+        "title": "Skin Changer no Windows corrigido",
+        "body": "A aplicação de skins no Windows voltou a funcionar na 4.0.15. Se você estiver numa versão anterior, atualize o app."
       },
       "pl": {
-        "title": "Skin Changer w Windows",
-        "body": "Ostatnia łatka LoL zepsuła nakładanie skinów w Windows; dotyczy to też innych skin changerów. Jak najszybciej wydamy aktualizację z poprawką."
+        "title": "Skin Changer w Windows naprawiony",
+        "body": "Nakładanie skinów w Windows znów działa w wersji 4.0.15. Jeśli masz starszą wersję, zaktualizuj aplikację."
       },
       "ru": {
-        "title": "Skin Changer в Windows",
-        "body": "Последний патч LoL сломал применение скинов в Windows; это затронуло и другие скин-ченджеры. Мы выпустим обновление с исправлением как можно скорее."
+        "title": "Skin Changer в Windows исправлен",
+        "body": "Применение скинов в Windows снова работает в версии 4.0.15. Если у вас более старая версия, обновите приложение."
       },
       "cs": {
-        "title": "Skin Changer ve Windows",
-        "body": "Poslední patch LoL rozbil aplikování skinů ve Windows; týká se to i dalších skin changerů. Opravu vydáme v aktualizaci co nejdříve."
+        "title": "Skin Changer ve Windows opraven",
+        "body": "Aplikování skinů ve Windows ve verzi 4.0.15 opět funguje. Pokud máte starší verzi, aktualizujte aplikaci."
       },
       "hu": {
-        "title": "Skin Changer Windowson",
-        "body": "A legutóbbi LoL-javítás elrontotta a skinek alkalmazását Windowson; ez más skin changereket is érint. Amint lehet, frissítéssel javítjuk."
+        "title": "Skin Changer Windowson javítva",
+        "body": "A skinek alkalmazása Windowson a 4.0.15-ös verzióban újra működik. Ha régebbi verziót használsz, frissítsd az alkalmazást."
       },
       "ro": {
-        "title": "Skin Changer pe Windows",
-        "body": "Ultimul patch LoL a stricat aplicarea skinurilor pe Windows; sunt afectate și alte skin changere. Vom lansa cât mai curând o actualizare cu remedierea."
+        "title": "Skin Changer pe Windows reparat",
+        "body": "Aplicarea skinurilor pe Windows funcționează din nou în 4.0.15. Dacă ai o versiune mai veche, actualizează aplicația."
       },
       "el": {
-        "title": "Skin Changer στα Windows",
-        "body": "Το τελευταίο patch του LoL χάλασε την εφαρμογή skins στα Windows· επηρεάζονται και άλλα skin changers. Θα κυκλοφορήσουμε διόρθωση με ενημέρωση το συντομότερο."
+        "title": "Το Skin Changer στα Windows διορθώθηκε",
+        "body": "Η εφαρμογή skins στα Windows λειτουργεί ξανά στην 4.0.15. Αν έχεις παλαιότερη έκδοση, ενημέρωσε την εφαρμογή."
       },
       "ja": {
-        "title": "Windows の Skin Changer",
-        "body": "最新の LoL パッチで Windows でのスキン適用が動作しなくなりました。他のスキン変更アプリも影響を受けています。できるだけ早く修正アップデートを配信します。"
+        "title": "Windows の Skin Changer を修正",
+        "body": "4.0.15 で Windows でのスキン適用が再び動作するようになりました。古いバージョンをお使いの場合はアプリを更新してください。"
       },
       "ko": {
-        "title": "Windows Skin Changer",
-        "body": "최신 LoL 패치로 Windows에서 스킨 적용이 작동하지 않습니다. 다른 스킨 변경 앱도 영향을 받고 있습니다. 최대한 빨리 업데이트로 수정하겠습니다."
+        "title": "Windows Skin Changer 수정됨",
+        "body": "4.0.15에서 Windows 스킨 적용이 다시 작동합니다. 이전 버전을 사용 중이라면 앱을 업데이트하세요."
       },
       "zh_CN": {
-        "title": "Windows 上的 Skin Changer",
-        "body": "最新的 LoL 补丁导致 Windows 上无法应用皮肤，其他换肤工具也受到影响。我们会尽快发布修复更新。"
-      },
-      "zh": {
-        "title": "Windows 上的 Skin Changer",
-        "body": "最新的 LoL 补丁导致 Windows 上无法应用皮肤，其他换肤工具也受到影响。我们会尽快发布修复更新。"
+        "title": "Windows 上的 Skin Changer 已修复",
+        "body": "4.0.15 中 Windows 上的皮肤应用已恢复正常。如果你使用的是旧版本，请更新应用。"
       },
       "zh_TW": {
-        "title": "Windows 上的 Skin Changer",
-        "body": "最新的 LoL 更新導致 Windows 上無法套用造型，其他換膚工具也受到影響。我們會盡快發布修正更新。"
+        "title": "Windows 上的 Skin Changer 已修復",
+        "body": "4.0.15 中 Windows 上的造型套用已恢復正常。如果你使用的是舊版本，請更新應用程式。"
       },
       "ar": {
-        "title": "Skin Changer على Windows",
-        "body": "تسبب آخر تحديث لـ LoL في تعطل تطبيق السكنات على Windows، وتأثرت تطبيقات تغيير السكنات الأخرى أيضًا. سنصدر تحديثًا بالإصلاح في أقرب وقت ممكن."
+        "title": "تم إصلاح Skin Changer على Windows",
+        "body": "عاد تطبيق السكنات على Windows للعمل في الإصدار 4.0.15. إذا كنت تستخدم إصدارًا أقدم، فحدّث التطبيق."
       },
       "th": {
-        "title": "Skin Changer บน Windows",
-        "body": "แพตช์ LoL ล่าสุดทำให้การใช้สกินบน Windows ใช้งานไม่ได้ และแอปเปลี่ยนสกินอื่นก็ได้รับผลกระทบด้วย เราจะออกอัปเดตแก้ไขโดยเร็วที่สุด"
+        "title": "แก้ไข Skin Changer บน Windows แล้ว",
+        "body": "การใช้สกินบน Windows กลับมาใช้งานได้ในเวอร์ชัน 4.0.15 หากคุณใช้เวอร์ชันเก่า โปรดอัปเดตแอป"
       },
       "vi": {
-        "title": "Skin Changer trên Windows",
-        "body": "Bản cập nhật LoL mới nhất làm hỏng việc áp dụng skin trên Windows; các ứng dụng đổi skin khác cũng bị ảnh hưởng. Chúng tôi sẽ phát hành bản sửa lỗi sớm nhất có thể."
+        "title": "Đã sửa Skin Changer trên Windows",
+        "body": "Việc áp dụng skin trên Windows đã hoạt động trở lại ở bản 4.0.15. Nếu bạn đang dùng bản cũ hơn, hãy cập nhật ứng dụng."
       },
       "id_ID": {
-        "title": "Skin Changer di Windows",
-        "body": "Patch LoL terbaru merusak penerapan skin di Windows; skin changer lain juga terdampak. Kami akan merilis pembaruan perbaikan secepatnya."
+        "title": "Skin Changer di Windows sudah diperbaiki",
+        "body": "Penerapan skin di Windows kembali berfungsi di 4.0.15. Jika kamu memakai versi lama, perbarui aplikasinya."
+      },
+      "zh": {
+        "title": "Windows 上的 Skin Changer 已修复",
+        "body": "4.0.15 中 Windows 上的皮肤应用已恢复正常。如果你使用的是旧版本，请更新应用。"
       }
     },
     {
