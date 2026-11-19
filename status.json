@@ -1,192 +1,102 @@
 {
   "notices": [
     {
-      "id": "win-skin-fixed-4.0.15",
+      "id": {
+        "title": "Semua lancar",
+        "body": "Saat ini tidak ada masalah yang diketahui. Jika ada kendala, kabari kami di Discord."
+      },
       "level": "fix",
       "platforms": [
         "windows",
         "mac"
       ],
       "tr": {
-        "title": "Windows'ta Skin Changer düzeldi",
-        "body": "4.0.15 ile Windows'ta kostüm uygulama yeniden çalışıyor. Eski bir sürümdeysen uygulamayı güncelle."
+        "title": "Her şey yolunda",
+        "body": "Şu an bilinen bir sorun yok. Bir sorun yaşarsan Discord'dan bize yaz."
       },
       "en": {
-        "title": "Skin Changer on Windows fixed",
-        "body": "Applying skins on Windows works again in 4.0.15. If you're on an older version, update the app."
+        "title": "All good",
+        "body": "There are no known issues right now. If something goes wrong, let us know on Discord."
       },
       "de": {
-        "title": "Skin Changer unter Windows behoben",
-        "body": "Das Anwenden von Skins unter Windows funktioniert in 4.0.15 wieder. Falls du eine ältere Version nutzt, aktualisiere die App."
+        "title": "Alles in Ordnung",
+        "body": "Derzeit sind keine Probleme bekannt. Wenn etwas nicht klappt, melde dich bei uns auf Discord."
       },
       "fr": {
-        "title": "Skin Changer sous Windows corrigé",
-        "body": "L'application des skins sous Windows fonctionne de nouveau dans la 4.0.15. Si vous avez une version plus ancienne, mettez l'application à jour."
+        "title": "Tout fonctionne",
+        "body": "Aucun problème connu pour le moment. Si quelque chose ne va pas, écrivez-nous sur Discord."
       },
       "es": {
-        "title": "Skin Changer en Windows solucionado",
-        "body": "Aplicar skins en Windows vuelve a funcionar en la 4.0.15. Si tienes una versión anterior, actualiza la app."
+        "title": "Todo en orden",
+        "body": "No hay problemas conocidos por ahora. Si algo falla, avísanos en Discord."
       },
       "it": {
-        "title": "Skin Changer su Windows risolto",
-        "body": "L'applicazione delle skin su Windows funziona di nuovo nella 4.0.15. Se hai una versione precedente, aggiorna l'app."
+        "title": "Tutto a posto",
+        "body": "Al momento non ci sono problemi noti. Se qualcosa non va, scrivici su Discord."
       },
       "pt": {
-        "title": "Skin Changer no Windows corrigido",
-        "body": "A aplicação de skins no Windows voltou a funcionar na 4.0.15. Se você estiver numa versão anterior, atualize o app."
+        "title": "Tudo certo",
+        "body": "Não há problemas conhecidos no momento. Se algo der errado, fale com a gente no Discord."
       },
       "pl": {
-        "title": "Skin Changer w Windows naprawiony",
-        "body": "Nakładanie skinów w Windows znów działa w wersji 4.0.15. Jeśli masz starszą wersję, zaktualizuj aplikację."
+        "title": "Wszystko działa",
+        "body": "Obecnie nie ma znanych problemów. Jeśli coś nie działa, napisz do nas na Discordzie."
       },
       "ru": {
-        "title": "Skin Changer в Windows исправлен",
-        "body": "Применение скинов в Windows снова работает в версии 4.0.15. Если у вас более старая версия, обновите приложение."
+        "title": "Всё в порядке",
+        "body": "Сейчас известных проблем нет. Если что-то пойдёт не так, напишите нам в Discord."
       },
       "cs": {
-        "title": "Skin Changer ve Windows opraven",
-        "body": "Aplikování skinů ve Windows ve verzi 4.0.15 opět funguje. Pokud máte starší verzi, aktualizujte aplikaci."
-      },
-      "hu": {
-        "title": "Skin Changer Windowson javítva",
-        "body": "A skinek alkalmazása Windowson a 4.0.15-ös verzióban újra működik. Ha régebbi verziót használsz, frissítsd az alkalmazást."
-      },
-      "ro": {
-        "title": "Skin Changer pe Windows reparat",
-        "body": "Aplicarea skinurilor pe Windows funcționează din nou în 4.0.15. Dacă ai o versiune mai veche, actualizează aplicația."
+        "title": "Vše v pořádku",
+        "body": "Momentálně nejsou známé žádné problémy. Pokud něco nefunguje, napiš nám na Discordu."
       },
       "el": {
-        "title": "Το Skin Changer στα Windows διορθώθηκε",
-        "body": "Η εφαρμογή skins στα Windows λειτουργεί ξανά στην 4.0.15. Αν έχεις παλαιότερη έκδοση, ενημέρωσε την εφαρμογή."
-      },
-      "ja": {
-        "title": "Windows の Skin Changer を修正",
-        "body": "4.0.15 で Windows でのスキン適用が再び動作するようになりました。古いバージョンをお使いの場合はアプリを更新してください。"
-      },
-      "ko": {
-        "title": "Windows Skin Changer 수정됨",
-        "body": "4.0.15에서 Windows 스킨 적용이 다시 작동합니다. 이전 버전을 사용 중이라면 앱을 업데이트하세요."
-      },
-      "zh_CN": {
-        "title": "Windows 上的 Skin Changer 已修复",
-        "body": "4.0.15 中 Windows 上的皮肤应用已恢复正常。如果你使用的是旧版本，请更新应用。"
-      },
-      "zh_TW": {
-        "title": "Windows 上的 Skin Changer 已修復",
-        "body": "4.0.15 中 Windows 上的造型套用已恢復正常。如果你使用的是舊版本，請更新應用程式。"
-      },
-      "ar": {
-        "title": "تم إصلاح Skin Changer على Windows",
-        "body": "عاد تطبيق السكنات على Windows للعمل في الإصدار 4.0.15. إذا كنت تستخدم إصدارًا أقدم، فحدّث التطبيق."
-      },
-      "th": {
-        "title": "แก้ไข Skin Changer บน Windows แล้ว",
-        "body": "การใช้สกินบน Windows กลับมาใช้งานได้ในเวอร์ชัน 4.0.15 หากคุณใช้เวอร์ชันเก่า โปรดอัปเดตแอป"
-      },
-      "vi": {
-        "title": "Đã sửa Skin Changer trên Windows",
-        "body": "Việc áp dụng skin trên Windows đã hoạt động trở lại ở bản 4.0.15. Nếu bạn đang dùng bản cũ hơn, hãy cập nhật ứng dụng."
-      },
-      "id_ID": {
-        "title": "Skin Changer di Windows sudah diperbaiki",
-        "body": "Penerapan skin di Windows kembali berfungsi di 4.0.15. Jika kamu memakai versi lama, perbarui aplikasinya."
-      },
-      "zh": {
-        "title": "Windows 上的 Skin Changer 已修复",
-        "body": "4.0.15 中 Windows 上的皮肤应用已恢复正常。如果你使用的是旧版本，请更新应用。"
-      }
-    },
-    {
-      "id": "live-ctrlx-2026-11",
-      "level": "warn",
-      "maxVersion": "4.0.15",
-      "tr": {
-        "title": "Canlı maç paneli Ctrl+X ile kapanmayabilir",
-        "body": "Bir sonraki güncellemede düzelteceğiz. Şimdilik paneli \"Gizle\" düğmesiyle ya da rozete tıklayarak kapat. İstersen Ayarlar'dan \"Oyun üstü görünüm\"ü kapatıp çerçeveli pencerede kullan veya \"Canlı maç ekranı\"nı devre dışı bırak."
-      },
-      "en": {
-        "title": "Live game panel may not close with Ctrl+X",
-        "body": "We'll fix this in the next update. For now, close the panel with the \"Hide\" button or by clicking the badge. You can also turn off \"In-game overlay\" in Settings to use the framed window, or disable \"Live game screen\"."
-      },
-      "de": {
-        "title": "Live-Spiel-Panel schließt sich evtl. nicht mit Strg+X",
-        "body": "Wir beheben das im nächsten Update. Schließe das Panel bis dahin mit der Schaltfläche \"Hide\" oder per Klick auf das Abzeichen. Du kannst auch in den Einstellungen \"In-game overlay\" ausschalten und das gerahmte Fenster nutzen oder \"Live game screen\" deaktivieren."
-      },
-      "fr": {
-        "title": "Le panneau de partie en direct peut ne pas se fermer avec Ctrl+X",
-        "body": "Nous corrigerons cela dans la prochaine mise à jour. En attendant, fermez le panneau avec le bouton \"Hide\" ou en cliquant sur le badge. Vous pouvez aussi désactiver \"In-game overlay\" dans les paramètres pour utiliser la fenêtre encadrée, ou désactiver \"Live game screen\"."
-      },
-      "es": {
-        "title": "El panel de partida en vivo puede no cerrarse con Ctrl+X",
-        "body": "Lo solucionaremos en la próxima actualización. Por ahora, cierra el panel con el botón \"Hide\" o haciendo clic en la insignia. También puedes desactivar \"In-game overlay\" en Ajustes para usar la ventana con marco, o desactivar \"Live game screen\"."
-      },
-      "it": {
-        "title": "Il pannello della partita live potrebbe non chiudersi con Ctrl+X",
-        "body": "Lo correggeremo nel prossimo aggiornamento. Per ora chiudi il pannello con il pulsante \"Hide\" o cliccando il badge. Puoi anche disattivare \"In-game overlay\" nelle Impostazioni per usare la finestra con cornice, oppure disattivare \"Live game screen\"."
-      },
-      "pt": {
-        "title": "O painel da partida ao vivo pode não fechar com Ctrl+X",
-        "body": "Vamos corrigir isso na próxima atualização. Por enquanto, feche o painel com o botão \"Hide\" ou clicando no selo. Você também pode desativar \"In-game overlay\" nas Configurações para usar a janela com moldura, ou desativar \"Live game screen\"."
-      },
-      "pl": {
-        "title": "Panel meczu na żywo może nie zamykać się Ctrl+X",
-        "body": "Naprawimy to w następnej aktualizacji. Na razie zamykaj panel przyciskiem \"Hide\" lub klikając plakietkę. Możesz też wyłączyć \"In-game overlay\" w Ustawieniach i używać okna z ramką albo wyłączyć \"Live game screen\"."
-      },
-      "ru": {
-        "title": "Панель текущего матча может не закрываться по Ctrl+X",
-        "body": "Исправим это в следующем обновлении. Пока закрывайте панель кнопкой \"Hide\" или нажатием на значок. Также можно отключить \"In-game overlay\" в настройках и пользоваться окном с рамкой или отключить \"Live game screen\"."
-      },
-      "cs": {
-        "title": "Panel živé hry se možná nezavře pomocí Ctrl+X",
-        "body": "Opravíme to v příští aktualizaci. Zatím panel zavírejte tlačítkem \"Hide\" nebo kliknutím na odznak. Můžete také v Nastavení vypnout \"In-game overlay\" a používat okno s rámečkem, nebo vypnout \"Live game screen\"."
+        "title": "Όλα καλά",
+        "body": "Αυτή τη στιγμή δεν υπάρχουν γνωστά προβλήματα. Αν κάτι δεν πάει καλά, γράψε μας στο Discord."
       },
       "hu": {
-        "title": "Az élő meccs panel lehet, hogy nem zárul be Ctrl+X-szel",
-        "body": "A következő frissítésben javítjuk. Addig zárd be a panelt a(z) \"Hide\" gombbal vagy a jelvényre kattintva. A Beállításokban kikapcsolhatod a(z) \"In-game overlay\" opciót is a keretes ablakhoz, vagy letilthatod a(z) \"Live game screen\" funkciót."
+        "title": "Minden rendben",
+        "body": "Jelenleg nincs ismert hiba. Ha valami nem működik, írj nekünk Discordon."
       },
       "ro": {
-        "title": "Panoul meciului live s-ar putea să nu se închidă cu Ctrl+X",
-        "body": "Vom rezolva asta în următoarea actualizare. Până atunci, închide panoul cu butonul \"Hide\" sau dând clic pe insignă. Poți și să dezactivezi \"In-game overlay\" din Setări pentru fereastra cu cadru, sau să dezactivezi \"Live game screen\"."
-      },
-      "el": {
-        "title": "Το πάνελ ζωντανού αγώνα μπορεί να μην κλείνει με Ctrl+X",
-        "body": "Θα το διορθώσουμε στην επόμενη ενημέρωση. Προς το παρόν κλείσε το πάνελ με το κουμπί \"Hide\" ή κάνοντας κλικ στο σήμα. Μπορείς επίσης να απενεργοποιήσεις το \"In-game overlay\" στις Ρυθμίσεις για παράθυρο με πλαίσιο ή να απενεργοποιήσεις το \"Live game screen\"."
-      },
-      "ja": {
-        "title": "ライブゲームパネルが Ctrl+X で閉じない場合があります",
-        "body": "次回のアップデートで修正します。それまではパネルを \"Hide\" ボタンまたはバッジのクリックで閉じてください。設定で \"In-game overlay\" をオフにして枠付きウィンドウで使うか、\"Live game screen\" を無効にすることもできます。"
-      },
-      "ko": {
-        "title": "실시간 게임 패널이 Ctrl+X로 닫히지 않을 수 있습니다",
-        "body": "다음 업데이트에서 수정하겠습니다. 그동안에는 \"Hide\" 버튼이나 배지를 클릭해 패널을 닫으세요. 설정에서 \"In-game overlay\"를 꺼서 테두리 있는 창으로 사용하거나 \"Live game screen\"을 비활성화할 수도 있습니다."
-      },
-      "zh_CN": {
-        "title": "实时对局面板可能无法用 Ctrl+X 关闭",
-        "body": "我们会在下次更新中修复。目前请用 \"Hide\" 按钮或点击徽章关闭面板。也可以在设置中关闭 \"In-game overlay\" 改用带边框的窗口，或停用 \"Live game screen\"。"
-      },
-      "zh_TW": {
-        "title": "即時對局面板可能無法用 Ctrl+X 關閉",
-        "body": "我們會在下次更新中修正。目前請用 \"Hide\" 按鈕或點擊徽章關閉面板。也可以在設定中關閉 \"In-game overlay\" 改用有邊框的視窗，或停用 \"Live game screen\"。"
+        "title": "Totul e în regulă",
+        "body": "Momentan nu există probleme cunoscute. Dacă ceva nu merge, scrie-ne pe Discord."
       },
       "ar": {
-        "title": "قد لا تُغلق لوحة المباراة المباشرة باستخدام Ctrl+X",
-        "body": "سنصلح ذلك في التحديث القادم. حاليًا، أغلق اللوحة بزر \"Hide\" أو بالنقر على الشارة. يمكنك أيضًا إيقاف \"In-game overlay\" من الإعدادات لاستخدام النافذة ذات الإطار، أو تعطيل \"Live game screen\"."
+        "title": "كل شيء على ما يرام",
+        "body": "لا توجد مشكلات معروفة حاليًا. إذا واجهت أي مشكلة، راسلنا على Discord."
+      },
+      "ja": {
+        "title": "すべて正常です",
+        "body": "現在、既知の問題はありません。問題があれば Discord でお知らせください。"
+      },
+      "ko": {
+        "title": "모두 정상입니다",
+        "body": "현재 알려진 문제가 없습니다. 문제가 생기면 Discord로 알려 주세요."
       },
       "th": {
-        "title": "แผงเกมสดอาจปิดด้วย Ctrl+X ไม่ได้",
-        "body": "เราจะแก้ไขในอัปเดตถัดไป ระหว่างนี้ให้ปิดแผงด้วยปุ่ม \"Hide\" หรือคลิกที่ป้าย หรือปิด \"In-game overlay\" ในการตั้งค่าเพื่อใช้หน้าต่างแบบมีกรอบ หรือปิดใช้งาน \"Live game screen\""
+        "title": "ทุกอย่างปกติ",
+        "body": "ขณะนี้ไม่มีปัญหาที่ทราบ หากพบปัญหา แจ้งเราได้ทาง Discord"
       },
       "vi": {
-        "title": "Bảng trận đấu trực tiếp có thể không đóng bằng Ctrl+X",
-        "body": "Chúng tôi sẽ sửa lỗi này trong bản cập nhật tới. Tạm thời hãy đóng bảng bằng nút \"Hide\" hoặc nhấp vào huy hiệu. Bạn cũng có thể tắt \"In-game overlay\" trong Cài đặt để dùng cửa sổ có khung, hoặc tắt \"Live game screen\"."
-      },
-      "id_ID": {
-        "title": "Panel pertandingan langsung mungkin tidak tertutup dengan Ctrl+X",
-        "body": "Kami akan memperbaikinya di pembaruan berikutnya. Untuk sementara, tutup panel dengan tombol \"Hide\" atau klik lencananya. Kamu juga bisa mematikan \"In-game overlay\" di Pengaturan untuk memakai jendela berbingkai, atau menonaktifkan \"Live game screen\"."
+        "title": "Mọi thứ đều ổn",
+        "body": "Hiện không có lỗi nào đã biết. Nếu gặp sự cố, hãy báo cho chúng tôi trên Discord."
       },
       "zh": {
-        "title": "实时对局面板可能无法用 Ctrl+X 关闭",
-        "body": "我们会在下次更新中修复。目前请用 \"Hide\" 按钮或点击徽章关闭面板。也可以在设置中关闭 \"In-game overlay\" 改用带边框的窗口，或停用 \"Live game screen\"。"
+        "title": "一切正常",
+        "body": "目前没有已知问题。如果遇到问题，请在 Discord 上告诉我们。"
+      },
+      "zh_CN": {
+        "title": "一切正常",
+        "body": "目前没有已知问题。如果遇到问题，请在 Discord 上告诉我们。"
+      },
+      "zh_TW": {
+        "title": "一切正常",
+        "body": "目前沒有已知問題。如果遇到問題，請在 Discord 上告訴我們。"
+      },
+      "id_ID": {
+        "title": "Semua lancar",
+        "body": "Saat ini tidak ada masalah yang diketahui. Jika ada kendala, kabari kami di Discord."
       }
     }
   ]
