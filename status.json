@@ -1,10 +1,7 @@
 {
   "notices": [
     {
-      "id": {
-        "title": "Semua lancar",
-        "body": "Saat ini tidak ada masalah yang diketahui. Jika ada kendala, kabari kami di Discord."
-      },
+      "id": "all-good-4.0.17",
       "level": "fix",
       "platforms": [
         "windows",
